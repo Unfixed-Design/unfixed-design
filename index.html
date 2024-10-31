@@ -14,33 +14,34 @@
             color: white;
             font-family: Avenir, Arial, sans-serif;
             margin: 0;
-            padding: 40px 20px; /* Adds padding to the top and sides */
+            padding: 20px; /* Adjusts padding to be less */
             box-sizing: border-box;
+            overflow-x: hidden; /* Prevents horizontal scroll */
         }
         
         /* Title Styling */
-        h1 {
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title-line {
             font-size: calc(14vw + 30px);
             font-family: Impact, Arial Black, sans-serif;
             font-weight: bold;
             text-transform: uppercase;
             margin: 0;
-            line-height: 0.2; /* Adds a little more space between the lines */
+            line-height: 1;
+            width: 100%; /* Ensures it spans the full width */
             text-align: center;
-            white-space: nowrap;
         }
-             h2 {
-            font-size: calc(14vw + 30px);
-            font-family: Impact, Arial Black, sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0;
-            line-height: 0.2; /* Adds a little more space between the lines */
-            text-align: center;
-            white-space: nowrap;
-        }
+
         /* Subtext Styling */
-        h2 {
+        .description {
             font-size: calc(1.2vw + 10px);
             max-width: 1000px;
             text-align: justify;
@@ -73,9 +74,11 @@
     </style>
 </head>
 <body>
-    <h1>UNFIXED<br>DESIGN</h1>
-    <h2>/////DESIGN</h2>
-    <h2>A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use, and informal building can construct an overarching entity of value. In short, it is not just what these builders build, but how they build that should be seen as a form worthy of conservation. Current inventory criteria should allow for this.</h2>
+    <div class="title-container">
+        <div class="title-line">UNFIXED</div>
+        <div class="title-line">DESIGN</div>
+    </div>
+    <h2 class="description">A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use, and informal building can construct an overarching entity of value. In short, it is not just what these builders build, but how they build that should be seen as a form worthy of conservation. Current inventory criteria should allow for this.</h2>
     <p>/////////////////////////////////////////</p>
     <a href="mailto:g.skeate@sms.ed.ac.uk">
         <button>Contact Us</button>
