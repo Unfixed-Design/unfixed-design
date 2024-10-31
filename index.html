@@ -20,26 +20,41 @@
             box-sizing: border-box;
         }
         h1 {
-            font-size: calc(8vw + 50px); /* Scales with screen width */
+            font-size: calc(10vw + 40px); /* Scales title with screen size */
             font-weight: bold;
             text-transform: uppercase;
             font-family: Arial, sans-serif;
             display: block;
             margin: 0;
             width: 100%;
-            text-align: justify;
-        }
-        h1::after {
-            content: "";
-            display: inline-block;
-            width: 100%;
+            line-height: 1.1;
         }
         h2 {
             font-size: calc(1.5vw + 10px); /* Responsive font for subtext */
-            margin: 20px 0;
+            margin: 20px auto;
             font-weight: normal;
-            text-align: justify;
             max-width: 800px;
+            text-align: center; /* Keeps it centered */
         }
         p {
             font-size: 18px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        a button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: gray;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        a button:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>UNFIXED<br>DESIGN</h1>
+    <h2>A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use and informal building can construct an over
