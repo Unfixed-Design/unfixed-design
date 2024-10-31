@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>//UNFXD///</title>
+    <title>/////UNFXD</title>
     <style>
+        /* Base styling */
         body {
             display: flex;
             flex-direction: column;
@@ -14,33 +15,40 @@
             background-color: black;
             color: white;
             font-family: Avenir, Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0 10px;
             box-sizing: border-box;
+            overflow: hidden;
         }
+        
+        /* Title Styling */
         h1 {
-            font-size: calc(10vw + 40px); /* Scales title with screen size */
+            font-size: calc(10vw + 20px); /* Makes it responsive */
             font-weight: bold;
             text-transform: uppercase;
-            font-family: Arial, sans-serif;
-            display: block;
             margin: 0;
-            width: 100%;
-            line-height: 1.1;
+            line-height: 1.2;
+            text-align: center;
+            white-space: nowrap;
         }
+        
+        /* Subtext Styling */
         h2 {
-            font-size: calc(1.5vw + 10px); /* Responsive font for subtext */
-            margin: 20px auto;
-            font-weight: normal;
+            font-size: calc(1.5vw + 10px);
             max-width: 800px;
-            text-align: center; /* Keeps it centered */
+            text-align: justify;
+            margin: 20px 0;
+            font-weight: normal;
         }
+
+        /* Horizontal divider */
         p {
             font-size: 18px;
             margin-bottom: 20px;
             letter-spacing: 3px;
         }
+        
+        /* Button Styling */
         a button {
             padding: 10px 20px;
             font-size: 16px;
@@ -50,6 +58,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+        
         a button:hover {
             background-color: darkgray;
         }
@@ -57,4 +66,10 @@
 </head>
 <body>
     <h1>UNFIXED<br>DESIGN</h1>
-    <h2>A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use and informal building can construct an over
+    <h2>A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use, and informal building can construct an overarching entity of value. In short, it is not just what these builders build, but how they build that should be seen as a form worthy of conservation. Current inventory criteria should allow for this.</h2>
+    <p>/////////////////////////////////////////</p>
+    <a href="mailto:g.skeate@sms.ed.ac.uk">
+        <button>Contact Us</button>
+    </a>
+</body>
+</html>
