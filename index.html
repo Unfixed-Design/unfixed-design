@@ -52,28 +52,21 @@
 
         /* Icon Button Styling */
         .icon-button {
-            background-color: gray;
-            border: none;
-            border-radius: 50%; /* Makes the button round */
-            color: white;
-            width: 50px; /* Set width of icon */
-            height: 50px; /* Set height of icon */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: transparent; /* No background */
+            border: none; /* No border */
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease; /* Animation on hover */
             margin-top: 20px; /* Space from the text above */
         }
         
         .icon-button:hover {
-            background-color: darkgray;
+            transform: scale(1.1); /* Scale effect on hover */
         }
 
-        /* Instagram Icon */
+        /* Icon Styling */
         .icon {
-            width: 24px; /* Size of the icon */
-            height: 24px; /* Size of the icon */
+            width: 50px; /* Size of the icon */
+            height: 50px; /* Size of the icon */
         }
 
         /* Space between buttons */
@@ -93,12 +86,12 @@
     <h2 class="description">A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use, and informal building can construct an overarching entity of value. In short, it is not just what these builders build, but how they build that should be seen as a form worthy of conservation. Current inventory criteria should allow for this.</h2>
     
     <div class="button-container">
-        <a href="mailto:gskeate@sms.ed.ac.uk">
-            <button class="icon-button" title="Contact Us">
+        <a href="mailto:gskeate@sms.ed.ac.uk?subject=Contact%20from%20UNFIXED%20DESIGN" title="Contact Us">
+            <button class="icon-button">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="icon" alt="Contact Us">
             </button>
         </a>
-        <a href="https://www.instagram.com/unfixeddesign/" target="_blank" title="Instagram">
+        <a href="https://www.instagram.com/yourusername" target="_blank" title="Instagram">
             <button class="icon-button">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="icon" alt="Instagram">
             </button>
