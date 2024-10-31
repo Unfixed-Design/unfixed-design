@@ -6,24 +6,52 @@
     <title>UNFIXED DESIGN</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Centers content vertically */
             background-color: black;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: Avenir, Arial, sans-serif;
             text-align: center;
-            margin-top: 100px;
+            margin: 0; /* Removes default margin */
         }
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             font-weight: bold;
             text-transform: uppercase;
+            font-family: Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 5px 0 20px;
         }
         p {
             font-size: 18px;
+            margin-bottom: 20px;
+        }
+        a button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: gray;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        a button:hover {
+            background-color: darkgray;
         }
     </style>
 </head>
 <body>
     <h1>UNFIXED DESIGN</h1>
+    <h2>Exploring Adaptive Spaces and Creative Solutions</h2>
     <p>This is a placeholder page for unfixed-design.org.</p>
+    <a href="mailto:info@unfixed-design.org">
+        <button>Contact Us</button>
+    </a>
 </body>
 </html>
