@@ -57,6 +57,7 @@
             cursor: pointer;
             transition: transform 0.3s ease; /* Animation on hover */
             margin-top: 20px; /* Space from the text above */
+            padding: 0; /* No padding */
         }
         
         .icon-button:hover {
@@ -76,6 +77,7 @@
             flex-direction: row;
             justify-content: center;
             gap: 20px; /* Space between buttons */
+            margin-top: 20px; /* Adds space above the button container */
         }
     </style>
 </head>
@@ -88,14 +90,10 @@
     
     <div class="button-container">
         <a href="mailto:gskeate@sms.ed.ac.uk?subject=Contact%20from%20UNFIXED%20DESIGN" title="Contact Us">
-            <button class="icon-button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Email_icon.svg/512px-Email_icon.svg.png" class="icon" alt="Contact Us">
-            </button>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Email_icon.svg/512px-Email_icon.svg.png" class="icon" alt="Contact Us">
         </a>
         <a href="https://www.instagram.com/unfixeddesign/" target="_blank" title="Instagram">
-            <button class="icon-button">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="icon" alt="Instagram">
-            </button>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="icon" alt="Instagram">
         </a>
     </div>
 </body>
