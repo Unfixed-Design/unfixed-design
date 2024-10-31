@@ -80,23 +80,26 @@
             gap: 20px; /* Space between buttons */
             margin-top: 10px; /* Adds space above the button container */
         }
-    </style>
+<style>
+    /* Additional style for the edge-reaching text */
+    .edge-text {
+        font-size: 6vw; /* Adjust this size to your preference */
+        white-space: nowrap; /* Prevents wrapping */
+        overflow: hidden; /* Ensures it doesn’t create unwanted scroll */
+        width: 100vw; /* Ensures it stretches to screen width */
+        text-align: center;
+        margin: 0; /* Removes default paragraph margin */
+        padding: 0; /* Removes padding */
+    }
+</style>
 </head>
 <body>
     <div class="title-container">
-            <p>/////////////////////////////////UNFXD//DSGN////</p>
+        <p class="edge-text">/////////////////////////////////UNFXD//DSGN////</p>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
     </div>
     <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-    <p>////MORE//SOON/////////////////////////////////</p>
-    <div class="button-container">
-        <a href="mailto:gskeate@sms.ed.ac.uk?subject=Contact%20from%20UNFXD" title="Contact Us" class="icon-button">
-            <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" class="icon" alt="Contact Us"> <!-- Correct mail icon link -->
-        </a>
-        <a href="https://www.instagram.com/unfixeddesign/" target="_blank" title="Instagram" class="icon-button">
-            <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" class="icon" alt="Instagram"> <!-- Correct Instagram icon link -->
-        </a>
-    </div>
+    <p class="edge-text">////MORE//SOON/////////////////////////////////</p>
 </body>
 </html>
