@@ -48,6 +48,7 @@
             margin: 10px 0;
             font-weight: 300;
             text-rendering: optimizeLegibility;
+            max-width: 900px;
         }
 
         /* Styling for edge-text paragraphs */
@@ -92,12 +93,8 @@
 
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
-            .container {
-                padding: 20px 15px; /* Adds extra padding on mobile */
-            }
-
             .description {
-                font-size: calc(1.2vw + 12px); /* Slightly larger for readability */
+                padding: 0 15px; /* Adds extra padding on mobile */
             }
         }
     </style>
