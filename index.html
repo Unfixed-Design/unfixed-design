@@ -14,7 +14,7 @@
             color: white;
             font-family: Avenir, Arial, sans-serif;
             margin: 0;
-            padding: 10px; /* Adjusts padding to be less */
+            padding: 40px 10px; /* Increased padding on top */
             box-sizing: border-box;
             overflow-x: hidden; /* Prevents horizontal scroll */
         }
@@ -26,7 +26,7 @@
             width: 100%;
             align-items: center;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 5px; /* Reduced space between title and subtext */
         }
 
         .title-line {
@@ -40,37 +40,40 @@
             text-align: center;
         }
 
-   /* Subtext Styling */
-.description {
-    font-size: calc(1vw + 10px); /* Smaller font size */
-    max-width: 900px;
-    text-align: justify;
-    margin: 20px 0;
-    font-weight: 300; /* Thin font weight */
-    text-rendering: optimizeLegibility; /* Optimizes for crisp rendering */
-}
-
-        /* Horizontal divider */
-        p {
-            font-size: 18px;
-            margin-bottom: 20px;
-            letter-spacing: 3px;
+        /* Subtext Styling */
+        .description {
+            font-size: calc(1vw + 10px); /* Smaller font size */
+            max-width: 900px;
+            text-align: justify;
+            margin: 10px 0; /* Reduced space between subtext and button */
+            font-weight: 300; /* Thin font weight */
+            text-rendering: optimizeLegibility; /* Optimizes for crisp rendering */
         }
-        
-        /* Button Styling */
-        a button {
-            padding: 10px 10px;
-            font-size: 16px;
+
+        /* Icon Button Styling */
+        .icon-button {
             background-color: gray;
             border: none;
+            border-radius: 50%; /* Makes the button round */
             color: white;
+            width: 50px; /* Set width of icon */
+            height: 50px; /* Set height of icon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-top: 20px;
+            margin-top: 20px; /* Space from the text above */
         }
         
-        a button:hover {
+        .icon-button:hover {
             background-color: darkgray;
+        }
+
+        /* Instagram Icon */
+        .icon {
+            width: 24px; /* Size of the icon */
+            height: 24px; /* Size of the icon */
         }
     </style>
 </head>
@@ -81,8 +84,10 @@
     </div>
     <h2 class="description">A collective, feedback-driven project focused on overlooked architecture within Glasgow. The project aims to display how architecture, spatial use, and informal building can construct an overarching entity of value. In short, it is not just what these builders build, but how they build that should be seen as a form worthy of conservation. Current inventory criteria should allow for this.</h2>
     
-    <a href="mailto:g.skeate@sms.ed.ac.uk">
-        <button>CONTACT</button>
+    <a href="mailto:gskeate@sms.ed.ac.uk">
+        <button class="icon-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="icon" alt="Contact Us">
+        </button>
     </a>
 </body>
 </html>
