@@ -24,9 +24,10 @@
         .title-container {
             display: flex;
             flex-direction: column;
-            width: 100%;
             align-items: center;
             text-align: center;
+            max-width: 900px; /* Matches the width of other elements */
+            width: 100%;
             margin-bottom: 5px;
         }
 
@@ -53,13 +54,13 @@
 
         /* Styling for edge-text paragraphs */
         .edge-text {
-            font-size: 2rem; /* Adjustable font size */
-            max-width: 700px;
+            font-size: 1.8rem; /* Adjustable font size */
+            max-width: 900px; /* Matches the width of other elements */
             text-align: center;
             margin: 10px 0;
             padding: 5px 0;
-            white-space: nowrap; /* Prevents line wrapping */
-            overflow: hidden; /* Ensures no unwanted scrolling */
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         /* Icon Button Styling */
