@@ -54,7 +54,6 @@
         /* Styling for edge-text */
         .edge-text {
             font-size: 1.8rem;
-            text-align: center;
             margin: 10px 0;
             padding: 5px 0;
             max-width: 900px;
@@ -62,6 +61,16 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* Right-aligned for upper edge text */
+        .edge-text.top {
+            text-align: right;
+        }
+
+        /* Left-aligned for lower edge text */
+        .edge-text.bottom {
+            text-align: left;
         }
 
         /* Icon Button Styling */
@@ -112,11 +121,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="edge-text" id="edgeTextTop"></div>
+        <div class="edge-text top" id="edgeTextTop"></div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="edge-text" id="edgeTextBottom"></div>
+        <div class="edge-text bottom" id="edgeTextBottom"></div>
     
         <!-- Button Container -->
         <div class="button-container">
