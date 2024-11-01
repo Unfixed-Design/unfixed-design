@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 10px; /* Reduced padding */
+            padding: 10px;
             box-sizing: border-box;
         }
 
@@ -46,7 +46,7 @@
         .description {
             font-size: calc(1vw + 10px);
             text-align: justify;
-            margin: 5px 0; /* Reduced margin */
+            margin: 15px 0; /* Increased vertical margin */
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
@@ -55,15 +55,13 @@
         /* Edge text styling */
         .edge-text {
             font-size: 1.8rem;
-            text-align: center;
-            margin: 5px 0; /* Reduced margin */
-            white-space: nowrap;
-            overflow: hidden;
-            max-width: 900px;
-            width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 0 10px; /* Reduced padding */
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 5px 10px;
+            box-sizing: border-box;
         }
 
         /* Icon Button Styling */
@@ -99,10 +97,10 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                padding: 0 10px; /* Adds extra padding on mobile */
+                padding: 0 10px;
             }
             .edge-text {
-                font-size: 1.2rem; /* Smaller font for edge text on mobile */
+                font-size: 1.2rem;
             }
         }
     </style>
