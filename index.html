@@ -51,7 +51,7 @@
             max-width: 900px;
         }
 
-        /* Styling for edge-text paragraphs */
+        /* Styling for edge-text */
         .edge-text {
             font-size: 1.8rem;
             text-align: center;
@@ -112,11 +112,11 @@
 </head>
 <body>
     <div class="container">
-        <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
+        <div class="edge-text" id="edgeTextTop"></div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <p class="edge-text">///ONGOING//////////////////////////////////////////////////////////////////</p>
+        <div class="edge-text" id="edgeTextBottom"></div>
     
         <!-- Button Container -->
         <div class="button-container">
@@ -128,5 +128,24 @@
             </a>
         </div>
     </div>
+
+    <script>
+        function generateHashes() {
+            const edgeTextTop = document.getElementById('edgeTextTop');
+            const edgeTextBottom = document.getElementById('edgeTextBottom');
+
+            const width = document.querySelector('.container').clientWidth; // Get container width
+            const hashWidth = 20; // Approximate width of each hash character
+            const numHashes = Math.floor((width / hashWidth)); // Calculate number of hashes to fill width
+
+            edgeTextTop.textContent = '/'.repeat(numHashes); // Fill top hashes
+            edgeTextBottom.textContent = '/'.repeat(numHashes); // Fill bottom hashes
+        }
+
+        // Run function to generate hashes when the page loads
+        window.onload = generateHashes;
+        // Also call on resize to adjust if window size changes
+        window.onresize = generateHashes;
+    </script>
 </body>
 </html>
