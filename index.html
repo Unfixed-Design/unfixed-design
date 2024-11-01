@@ -58,17 +58,25 @@
             max-width: 900px;
             width: 100%;
             position: relative; /* Positioning for embedded text */
+            white-space: nowrap; /* Prevents wrapping */
+            overflow: hidden; /* Hides overflow */
         }
 
         /* Embedded text within hashes */
         .embedded-text {
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: black; /* Matches the background */
             padding: 0 10px; /* Padding for better spacing */
             color: white; /* Ensures text is visible */
-            white-space: nowrap; /* Prevents wrapping */
+        }
+
+        /* Top hashes with justified right text */
+        .top-hashes {
+            text-align: right;
+        }
+
+        /* Bottom hashes with justified left text */
+        .bottom-hashes {
+            text-align: left;
         }
 
         /* Icon Button Styling */
@@ -119,13 +127,13 @@
 </head>
 <body>
     <div class="container">
-        <div class="edge-text" id="edgeTextTop">
+        <div class="edge-text top-hashes" id="edgeTextTop">
             <span class="embedded-text">UNFXD//DSGN</span>
         </div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="edge-text" id="edgeTextBottom">
+        <div class="edge-text bottom-hashes" id="edgeTextBottom">
             <span class="embedded-text">ONGOING</span>
         </div>
     
