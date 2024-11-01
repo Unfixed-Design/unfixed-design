@@ -55,9 +55,11 @@
         .hash-line {
             font-size: 1.8rem;
             margin: 5px 0; /* Reduced margin */
-            width: 100%; /* Ensures it spans the full width of the container */
+            width: calc(100% - 20px); /* Ensures it spans the full width of the container minus padding */
+            padding: 0 10px; /* Adds padding on left and right */
             text-align: center; /* Center alignment */
             overflow: hidden; /* Prevents overflow */
+            white-space: nowrap; /* Prevent text wrapping */
         }
 
         /* Icon Button Styling */
@@ -97,11 +99,10 @@
             }
             .hash-line {
                 font-size: 1.2rem; /* Reduces font size */
-                max-width: 90vw;   /* Limits width on mobile */
-                padding: 0;        /* No padding to avoid edge stretching */
+                width: calc(100% - 20px); /* Limits width on mobile */
+                padding: 0 10px; /* Maintains padding */
+                overflow: hidden; /* Prevents overflow */
                 white-space: nowrap; /* Prevent text wrapping */
-                overflow: hidden;
-                text-overflow: clip;
             }
         }
     </style>
