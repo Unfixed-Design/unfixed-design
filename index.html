@@ -53,15 +53,13 @@
 
         /* Styling for edge-text paragraphs */
         .edge-text {
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* Default font size */
             text-align: center;
             margin: 10px 0;
             padding: 5px 0;
             max-width: 900px;
             width: 100%;
-            white-space: nowrap;
             overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         /* Responsive styling for smaller screens */
@@ -70,22 +68,19 @@
                 padding: 0 15px;
             }
             .edge-text {
-                font-size: 1.2rem; /* Reduces font size */
-                max-width: 90vw;   /* Limits width on mobile */
-                white-space: normal; /* Allows text to wrap on small screens */
-                text-align: center;
-                line-height: 1.2;
+                font-size: 1.2rem; /* Smaller font size on mobile */
+                padding: 0 5px; /* Adds padding around edges */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <p class="edge-text">////////////////////////////////////////<br>UNFXD//DSGN<br>///////////////////////////</p>
+        <p class="edge-text">////////////////////////////////////////UNFXD//DSGN///////////////////////////</p>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <p class="edge-text">///////////////////////////<br>ONGOING<br>////////////////////////////////////</p>
+        <p class="edge-text">///////////////////////////ONGOING////////////////////////////////////////////</p>
     
         <!-- Button Container -->
         <div class="button-container">
