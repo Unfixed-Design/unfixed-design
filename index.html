@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 30px 0; /* Padding on top, no side padding */
+            padding: 20px; /* Adjusted padding */
         }
 
         /* Title Styling */
@@ -49,18 +49,15 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
-            padding: 0 10px; /* Add side padding to description */
         }
 
-        /* Styling for hash lines */
+        /* Hash line styling */
         .hash-line {
-            font-size: 1.8rem;
-            margin: 5px 0; /* Vertical spacing */
-            width: 100%; /* Full width */
-            padding: 0 10px; /* Side padding */
-            overflow: hidden; /* Prevent overflow */
-            white-space: nowrap; /* Prevent text wrapping */
-            text-align: center; /* Center text */
+            font-size: 1.8rem; /* Adjustable font size */
+            text-align: left;
+            width: 100%;
+            padding: 10px 0; /* Padding for spacing */
+            box-sizing: border-box; /* Ensures padding is included in width */
         }
 
         /* Icon Button Styling */
@@ -99,23 +96,18 @@
                 padding: 0 15px; /* Adds extra padding on mobile */
             }
             .hash-line {
-                font-size: 1.2rem; /* Reduces font size */
-                padding: 0 10px; /* Maintains padding */
+                font-size: 1.2rem; /* Adjusts font size for mobile */
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hash-line">
-            //////////////////////////////////////////////////////////////
-        </div>
-        <div class="title-line">UNFIXED//</div>
+        <div class="hash-line">///////////////////////////////////////////////////////</div>
+        <div class="title-line">UNFXD//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="hash-line">
-            //////////////////////////////////////////////////////////////
-        </div>
+        <div class="hash-line">///////////////////////////////////////////////////////</div>
     
         <!-- Button Container -->
         <div class="button-container">
