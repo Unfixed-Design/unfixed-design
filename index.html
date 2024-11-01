@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 20px; /* Adjusted padding */
+            padding: 10px;
         }
 
         /* Title Styling */
@@ -51,13 +51,17 @@
             max-width: 900px;
         }
 
-        /* Hash line styling */
-        .hash-line {
-            font-size: 1.8rem; /* Adjustable font size */
-            text-align: left;
+        /* Styling for edge-text paragraphs */
+        .edge-text {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 10px 0;
+            padding: 5px 0;
+            max-width: 900px;
             width: 100%;
-            padding: 10px 0; /* Padding for spacing */
-            box-sizing: border-box; /* Ensures padding is included in width */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Icon Button Styling */
@@ -93,21 +97,26 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                padding: 0 15px; /* Adds extra padding on mobile */
+                padding: 0 15px;
             }
-            .hash-line {
-                font-size: 1.2rem; /* Adjusts font size for mobile */
+            .edge-text {
+                font-size: 1.2rem; /* Reduces font size */
+                max-width: 90vw;   /* Limits width on mobile */
+                padding: 0 10px;   /* Adds padding to avoid edge stretching */
+                white-space: normal; /* Allows text to wrap on small screens */
+                overflow: hidden;
+                text-overflow: clip;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hash-line">///////////////////////////////////////////////////////</div>
-        <div class="title-line">UNFXD//</div>
+        <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
+        <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="hash-line">///////////////////////////////////////////////////////</div>
+        <p class="edge-text">///ONGOING//////////////////////////////////////////////////////////////////</p>
     
         <!-- Button Container -->
         <div class="button-container">
