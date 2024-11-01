@@ -78,9 +78,9 @@
             text-overflow: ellipsis;
         }
 
-        /* Adjust vertical padding */
+        /* Adjust vertical padding for desktop */
         .edge-text:first-of-type {
-            margin-bottom: 5px; /* Adjust this value as needed */
+            margin-bottom: 5px; /* Adjust this value for desktop */
         }
 
         /* Icon Button Styling */
@@ -126,6 +126,11 @@
                 white-space: normal;
                 overflow: hidden;
                 text-overflow: clip;
+            }
+
+            /* Adjust vertical padding for mobile */
+            .edge-text:first-of-type {
+                margin-bottom: 15px; /* Adjust this value for mobile */
             }
         }
     </style>
