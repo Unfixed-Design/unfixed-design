@@ -55,7 +55,7 @@
         .edge-text {
             font-size: 1.8rem;
             margin: 5px 0; /* Reduced margin */
-            max-width: 900px;
+            max-width: 100%; /* Ensure it spans full width */
             width: 100%;
             position: relative; /* Positioning for embedded text */
             white-space: nowrap; /* Prevents wrapping */
@@ -72,11 +72,13 @@
         /* Top hashes with justified right text */
         .top-hashes {
             text-align: right;
+            width: 100%; /* Ensure full width */
         }
 
         /* Bottom hashes with justified left text */
         .bottom-hashes {
             text-align: left;
+            width: 100%; /* Ensure full width */
         }
 
         /* Icon Button Styling */
@@ -127,14 +129,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="edge-text top-hashes" id="edgeTextTop">
-            <span class="embedded-text">UNFXD//DSGN</span>
+        <div class="edge-text top-hashes">
+            <span class="embedded-text">///////////////////////////////////////////////////////UNFXD//DSGN</span>
         </div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="edge-text bottom-hashes" id="edgeTextBottom">
-            <span class="embedded-text">ONGOING</span>
+        <div class="edge-text bottom-hashes">
+            <span class="embedded-text">ONGOING//////////////////////////////////////////////////////////////////</span>
         </div>
     
         <!-- Button Container -->
@@ -150,8 +152,8 @@
 
     <script>
         function generateHashes() {
-            const edgeTextTop = document.getElementById('edgeTextTop');
-            const edgeTextBottom = document.getElementById('edgeTextBottom');
+            const edgeTextTop = document.querySelector('.top-hashes');
+            const edgeTextBottom = document.querySelector('.bottom-hashes');
 
             const width = document.querySelector('.container').clientWidth; // Get container width
             const hashWidth = 20; // Approximate width of each hash character
