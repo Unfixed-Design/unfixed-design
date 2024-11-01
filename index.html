@@ -18,21 +18,21 @@
             padding: 0;
             box-sizing: border-box;
             overflow-x: hidden;
-            position: relative; /* Allows absolute positioning of children */
+            position: relative;
         }
 
         /* Video styling */
         video {
-            position: absolute; /* Positioning the video */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cover the entire background */
-            z-index: -1; /* Send video to the background */
+            object-fit: cover;
+            z-index: -1;
         }
 
-        /* Container styling to align all elements */
+        /* Container styling */
         .container {
             display: flex;
             flex-direction: column;
@@ -40,8 +40,8 @@
             max-width: 900px;
             width: 100%;
             padding: 10px;
-            position: relative; /* Keeps content above video */
-            z-index: 1; /* Ensure container is above video */
+            position: relative;
+            z-index: 1;
         }
 
         /* Title Styling */
@@ -57,7 +57,7 @@
 
         /* Subtext Styling */
         .description {
-            font-size: 20px; /* Set to 8px for desktop */
+            font-size: 20px;
             text-align: justify;
             margin: 10px 0;
             font-weight: 300;
@@ -78,6 +78,11 @@
             text-overflow: ellipsis;
         }
 
+        /* Adjust vertical padding */
+        .edge-text:first-of-type {
+            margin-bottom: 20px; /* Adjust this value as needed */
+        }
+
         /* Icon Button Styling */
         .icon-button {
             background-color: transparent;
@@ -86,7 +91,7 @@
             transition: transform 0.3s ease;
             padding: 0;
         }
-        
+
         .icon-button:hover {
             transform: scale(1.1);
         }
@@ -111,14 +116,14 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                font-size: 16px; /* Increase to 10px for mobile */
+                font-size: 16px;
                 padding: 0 15px;
             }
             .edge-text {
-                font-size: 1.2rem; /* Reduces font size */
-                max-width: 90vw;   /* Limits width on mobile */
-                padding: 0 10px;   /* Adds padding to avoid edge stretching */
-                white-space: normal; /* Allows text to wrap on small screens */
+                font-size: 1.2rem;
+                max-width: 90vw;
+                padding: 0 10px;
+                white-space: normal;
                 overflow: hidden;
                 text-overflow: clip;
             }
@@ -137,13 +142,11 @@
 </div>
 -->
 
-<!-- The rest of your content goes here -->
-
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
-        <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can construct overarching entities of value. In specific circumstances, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this.</h2>
+        <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can construct overarching entities of value. In specific circumstances, it is not just what builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this.</h2>
         <p class="edge-text">////ONGOING//////////////////////////////////////////////////////////////////</p>
     
         <!-- Button Container -->
