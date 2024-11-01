@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 20px; /* Adds padding on both sides */
+            padding: 10px; /* Reduced padding */
             box-sizing: border-box;
         }
 
@@ -46,7 +46,7 @@
         .description {
             font-size: calc(1vw + 10px);
             text-align: justify;
-            margin: 10px 0;
+            margin: 5px 0; /* Reduced margin */
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
@@ -56,11 +56,14 @@
         .edge-text {
             font-size: 1.8rem;
             text-align: center;
-            margin: 10px 0;
+            margin: 5px 0; /* Reduced margin */
             white-space: nowrap;
             overflow: hidden;
             max-width: 900px;
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px; /* Reduced padding */
         }
 
         /* Icon Button Styling */
@@ -96,7 +99,7 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                padding: 0 15px; /* Adds extra padding on mobile */
+                padding: 0 10px; /* Adds extra padding on mobile */
             }
             .edge-text {
                 font-size: 1.2rem; /* Smaller font for edge text on mobile */
@@ -106,11 +109,17 @@
 </head>
 <body>
     <div class="container">
-        <p class="edge-text" id="top-edge-text"></p>
+        <div class="edge-text">
+            <span id="top-edge-text-left"></span>
+            <span>UNFXD//DSGN</span>
+        </div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <p class="edge-text" id="bottom-edge-text"></p>
+        <div class="edge-text">
+            <span>ONGOING</span>
+            <span id="bottom-edge-text-right"></span>
+        </div>
     
         <!-- Button Container -->
         <div class="button-container">
@@ -124,16 +133,18 @@
     </div>
 
     <script>
-        // Function to generate slashes within the 900px width container
+        // Function to generate slashes for left- and right-aligned edge text
         function generateEdgeText() {
             const containerWidth = document.querySelector('.container').clientWidth;
             const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
             const characterWidth = fontSize * 0.6; // Approximate width per character
             const slashCount = Math.floor(containerWidth / characterWidth);
 
-            const edgeText = '/'.repeat(slashCount);
-            document.getElementById('top-edge-text').textContent = edgeText + "UNFXD//DSGN" + edgeText;
-            document.getElementById('bottom-edge-text').textContent = edgeText + "ONGOING" + edgeText;
+            const slashesLeft = '/'.repeat(Math.floor(slashCount / 2));
+            const slashesRight = '/'.repeat(Math.ceil(slashCount / 2));
+
+            document.getElementById('top-edge-text-left').textContent = slashesLeft;
+            document.getElementById('bottom-edge-text-right').textContent = slashesRight;
         }
 
         // Call the function on load and on resize
