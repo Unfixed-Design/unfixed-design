@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 20px 10px; /* Increased top padding */
+            padding: 20px; /* Increased top padding */
         }
 
         /* Title Styling */
@@ -55,11 +55,11 @@
         .hash-line {
             font-size: 1.8rem;
             margin: 5px 0; /* Reduced margin */
-            width: 100%; /* Ensure it spans full width */
+            width: calc(100% - 20px); /* Ensures it spans the full width of the container */
             max-width: 900px; /* Limit width to 900px */
-            white-space: nowrap; /* Prevents wrapping */
-            overflow: hidden; /* Prevents overflow */
+            padding: 0; /* Remove any default padding */
             text-align: center; /* Center alignment */
+            overflow: hidden; /* Prevents overflow */
         }
 
         /* Icon Button Styling */
@@ -95,12 +95,15 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                padding: 0 15px;
+                padding: 0 15px; /* Adds extra padding on mobile */
             }
             .hash-line {
                 font-size: 1.2rem; /* Reduces font size */
                 max-width: 90vw;   /* Limits width on mobile */
+                padding: 0 10px;   /* Adds padding to avoid edge stretching */
                 white-space: normal; /* Allows text to wrap on small screens */
+                overflow: hidden;
+                text-overflow: clip;
             }
         }
     </style>
