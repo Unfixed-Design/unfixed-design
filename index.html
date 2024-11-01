@@ -9,38 +9,14 @@
         /* Base styling */
         body {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             background-color: black;
             color: white;
             font-family: Avenir, Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Fullscreen video styling */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -2;
-        }
-
-        /* Overlay to dim the video */
-        .video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
-            z-index: -1;
+            overflow-y: auto;
         }
 
         /* Container styling to align all elements */
@@ -51,7 +27,38 @@
             max-width: 900px;
             width: 100%;
             padding: 10px;
+            position: relative;
             z-index: 1;
+        }
+
+        /* Section for the video background */
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Fullscreen video styling */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Overlay to dim the video */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+            z-index: 0;
         }
 
         /* Title Styling with shadow */
@@ -63,7 +70,7 @@
             margin: 0;
             line-height: 1;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Drop shadow */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* Subtext Styling with shadow */
@@ -74,7 +81,7 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Drop shadow */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
         /* Styling for edge-text paragraphs with shadow */
@@ -88,7 +95,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Drop shadow */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         /* Icon Button Styling */
@@ -138,14 +145,16 @@
     </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <video autoplay muted loop class="video-background">
-        <source src="videos/your-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="video-section">
+        <!-- Video Background -->
+        <video autoplay muted loop class="video-background">
+            <source src="videos/your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <!-- Video Overlay for dimming effect -->
-    <div class="video-overlay"></div>
+        <!-- Video Overlay for dimming effect -->
+        <div class="video-overlay"></div>
+    </div>
 
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
