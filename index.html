@@ -164,7 +164,12 @@
         }
 
         // Run function to generate hashes when the page loads
-        window.onload = generateHashes;
+        window.onload = function() {
+            generateHashes(); // Fill hashes
+            document.querySelector('.embedded-text').style.display = 'inline'; // Display embedded text
+            document.querySelector('.embedded-text:nth-of-type(2)').style.display = 'inline'; // Display embedded text
+        };
+
         // Also call on resize to adjust if window size changes
         window.onresize = generateHashes;
     </script>
