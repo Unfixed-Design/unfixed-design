@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 10px; /* Original padding */
+            padding: 10px;
             box-sizing: border-box;
         }
 
@@ -46,7 +46,7 @@
         .description {
             font-size: calc(1vw + 10px);
             text-align: justify;
-            margin: 10px 0; /* Original margin */
+            margin: 10px 0;
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
@@ -61,6 +61,7 @@
             max-width: 900px;
             width: 100%;
             padding: 0;
+            margin: 10px 0;
             box-sizing: border-box;
         }
 
@@ -138,11 +139,10 @@
             const characterWidth = fontSize * 0.6; // Approximate width per character
             const slashCount = Math.floor(containerWidth / characterWidth);
 
-            const slashesLeft = '/'.repeat(Math.floor(slashCount / 2));
-            const slashesRight = '/'.repeat(Math.ceil(slashCount / 2));
+            const slashes = '/'.repeat(Math.floor(slashCount / 2));
 
-            document.getElementById('top-edge-text-left').textContent = slashesLeft;
-            document.getElementById('bottom-edge-text-right').textContent = slashesRight;
+            document.getElementById('top-edge-text-left').textContent = slashes;
+            document.getElementById('bottom-edge-text-right').textContent = slashes;
         }
 
         // Call the function on load and on resize
