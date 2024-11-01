@@ -57,7 +57,7 @@
 
         /* Subtext Styling */
         .description {
-            font-size: calc(1vw + 8px);
+            font-size: 8px; /* Set to 8px for desktop */
             text-align: justify;
             margin: 10px 0;
             font-weight: 300;
@@ -111,6 +111,7 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
+                font-size: 10px; /* Increase to 10px for mobile */
                 padding: 0 15px;
             }
             .edge-text {
