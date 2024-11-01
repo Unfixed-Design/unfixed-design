@@ -53,13 +53,15 @@
 
         /* Styling for edge-text paragraphs */
         .edge-text {
-            font-size: 1.8rem; /* Adjustable font size */
+            font-size: 1.8rem;
             text-align: center;
             margin: 10px 0;
             padding: 5px 0;
             max-width: 900px;
-            overflow: hidden;
+            width: 100%;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* Icon Button Styling */
@@ -95,11 +97,15 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                padding: 0 15px; /* Adds extra padding on mobile */
+                padding: 0 15px;
             }
             .edge-text {
-                font-size: 1.2rem; /* Scales down font size on smaller screens */
-                padding: 0 10px; /* Adds padding to avoid edge stretching */
+                font-size: 1.2rem; /* Reduces font size */
+                max-width: 90vw;   /* Limits width on mobile */
+                padding: 0 10px;   /* Adds padding to avoid edge stretching */
+                white-space: normal; /* Allows text to wrap on small screens */
+                overflow: hidden;
+                text-overflow: clip;
             }
         }
     </style>
