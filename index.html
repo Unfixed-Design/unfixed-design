@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 20px; /* Increased top padding */
+            padding: 30px 10px; /* Increased top padding */
         }
 
         /* Title Styling */
@@ -55,9 +55,7 @@
         .hash-line {
             font-size: 1.8rem;
             margin: 5px 0; /* Reduced margin */
-            width: calc(100% - 20px); /* Ensures it spans the full width of the container */
-            max-width: 900px; /* Limit width to 900px */
-            padding: 0; /* Remove any default padding */
+            width: 100%; /* Ensures it spans the full width of the container */
             text-align: center; /* Center alignment */
             overflow: hidden; /* Prevents overflow */
         }
@@ -100,8 +98,8 @@
             .hash-line {
                 font-size: 1.2rem; /* Reduces font size */
                 max-width: 90vw;   /* Limits width on mobile */
-                padding: 0 10px;   /* Adds padding to avoid edge stretching */
-                white-space: normal; /* Allows text to wrap on small screens */
+                padding: 0;        /* No padding to avoid edge stretching */
+                white-space: nowrap; /* Prevent text wrapping */
                 overflow: hidden;
                 text-overflow: clip;
             }
