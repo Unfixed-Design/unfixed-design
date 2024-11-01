@@ -55,30 +55,25 @@
         .edge-text {
             font-size: 1.8rem;
             margin: 5px 0; /* Reduced margin */
-            max-width: 100%; /* Ensure it spans full width */
-            width: 100%;
+            width: 100%; /* Ensure it spans full width */
             position: relative; /* Positioning for embedded text */
             white-space: nowrap; /* Prevents wrapping */
-            overflow: hidden; /* Hides overflow */
         }
 
         /* Embedded text within hashes */
         .embedded-text {
             position: absolute;
-            padding: 0 10px; /* Padding for better spacing */
             color: white; /* Ensures text is visible */
         }
 
         /* Top hashes with justified right text */
         .top-hashes {
             text-align: right;
-            width: 100%; /* Ensure full width */
         }
 
         /* Bottom hashes with justified left text */
         .bottom-hashes {
             text-align: left;
-            width: 100%; /* Ensure full width */
         }
 
         /* Icon Button Styling */
@@ -119,24 +114,21 @@
             .edge-text {
                 font-size: 1.2rem; /* Reduces font size */
                 max-width: 90vw;   /* Limits width on mobile */
-                padding: 0 10px;   /* Adds padding to avoid edge stretching */
                 white-space: normal; /* Allows text to wrap on small screens */
-                overflow: hidden;
-                text-overflow: clip;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="edge-text top-hashes">
-            <span class="embedded-text">///////////////////////////////////////////////////////UNFXD//DSGN</span>
+        <div class="edge-text top-hashes" id="top-hashes">
+            <span class="embedded-text" id="top-text">UNFXD//DSGN</span>
         </div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="edge-text bottom-hashes">
-            <span class="embedded-text">ONGOING//////////////////////////////////////////////////////////////////</span>
+        <div class="edge-text bottom-hashes" id="bottom-hashes">
+            <span class="embedded-text" id="bottom-text">ONGOING</span>
         </div>
     
         <!-- Button Container -->
@@ -152,22 +144,30 @@
 
     <script>
         function generateHashes() {
-            const edgeTextTop = document.querySelector('.top-hashes');
-            const edgeTextBottom = document.querySelector('.bottom-hashes');
+            const topHashes = document.getElementById('top-hashes');
+            const bottomHashes = document.getElementById('bottom-hashes');
 
             const width = document.querySelector('.container').clientWidth; // Get container width
             const hashWidth = 20; // Approximate width of each hash character
             const numHashes = Math.floor((width / hashWidth)); // Calculate number of hashes to fill width
 
-            edgeTextTop.innerHTML = '/'.repeat(numHashes); // Fill top hashes
-            edgeTextBottom.innerHTML = '/'.repeat(numHashes); // Fill bottom hashes
+            topHashes.innerHTML = '/'.repeat(numHashes); // Fill top hashes
+            bottomHashes.innerHTML = '/'.repeat(numHashes); // Fill bottom hashes
+
+            // Position embedded text
+            const topText = document.getElementById('top-text');
+            const bottomText = document.getElementById('bottom-text');
+
+            topText.style.position = 'absolute';
+            topText.style.right = '10px'; // Align to the right within hashes
+
+            bottomText.style.position = 'absolute';
+            bottomText.style.left = '10px'; // Align to the left within hashes
         }
 
         // Run function to generate hashes when the page loads
         window.onload = function() {
             generateHashes(); // Fill hashes
-            document.querySelector('.embedded-text').style.display = 'inline'; // Display embedded text
-            document.querySelector('.embedded-text:nth-of-type(2)').style.display = 'inline'; // Display embedded text
         };
 
         // Also call on resize to adjust if window size changes
