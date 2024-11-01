@@ -6,95 +6,78 @@
     <title>UNFXD//DSGN</title>
     <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
     <style>
-        /* Base styling */
-        body {
-            display: flex;
-            justify-content: center;
-            background-color: black;
-            color: white;
-            font-family: Avenir, Arial, sans-serif;
+        /* Basic Reset */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            overflow-y: auto;
         }
 
-        /* Container styling to align all elements */
-        .container {
+        /* Full-screen body setup with centered content */
+        body {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            max-width: 900px;
-            width: 100%;
-            padding: 10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Section for the video background */
-        .video-section {
-            position: relative;
-            width: 100%;
-            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Avenir, Arial, sans-serif;
             overflow: hidden;
+            min-height: 100vh;
+            position: relative;
         }
 
-        /* Fullscreen video styling */
-        .video-background {
+        /* Video Background Styling */
+        .video-section {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            overflow: hidden;
             z-index: -1;
         }
 
-        /* Overlay to dim the video */
+        .video-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay to slightly darken video */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
-            z-index: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
         }
 
-        /* Title Styling with shadow */
+        /* Container styling */
+        .container {
+            text-align: center;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        /* Text Styling with shadow */
         .title-line {
             font-size: calc(14vw + 30px);
             font-family: Impact, Arial Black, sans-serif;
             font-weight: bold;
             text-transform: uppercase;
-            margin: 0;
-            line-height: 1;
-            text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
-        /* Subtext Styling with shadow */
         .description {
             font-size: calc(1vw + 10px);
-            text-align: justify;
-            margin: 10px 0;
             font-weight: 300;
-            text-rendering: optimizeLegibility;
-            max-width: 900px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
-        /* Styling for edge-text paragraphs with shadow */
         .edge-text {
             font-size: 1.8rem;
-            text-align: center;
-            margin: 10px 0;
-            padding: 5px 0;
-            max-width: 900px;
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
@@ -105,6 +88,7 @@
             cursor: pointer;
             transition: transform 0.3s ease;
             padding: 0;
+            margin: 0 10px;
         }
         
         .icon-button:hover {
@@ -116,16 +100,6 @@
             width: 30px;
             height: 30px;
             filter: brightness(0) invert(1);
-            display: block;
-        }
-
-        /* Space between buttons */
-        .button-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
         }
 
         /* Responsive styling for smaller screens */
@@ -135,11 +109,7 @@
             }
             .edge-text {
                 font-size: 1.2rem;
-                max-width: 90vw;
-                padding: 0 10px;
                 white-space: normal;
-                overflow: hidden;
-                text-overflow: clip;
             }
         }
     </style>
@@ -151,8 +121,6 @@
             <source src="videos/your-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
-        <!-- Video Overlay for dimming effect -->
         <div class="video-overlay"></div>
     </div>
 
@@ -164,7 +132,7 @@
         <p class="edge-text">///ONGOING//////////////////////////////////////////////////////////////////</p>
     
         <!-- Button Container -->
-        <div class="button-container">
+        <div>
             <a href="mailto:gskeate@sms.ed.ac.uk?subject=Contact%20from%20UNFXD" title="Contact Us" class="icon-button">
                 <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" class="icon" alt="Contact Us">
             </a>
