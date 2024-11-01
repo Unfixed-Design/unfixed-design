@@ -50,19 +50,22 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
+            padding: 0 10px;
         }
 
         /* Edge text styling */
-        .edge-text {
-            font-size: 1.8rem;
+        .edge-text-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 900px;
+            justify-content: space-between;
             width: 100%;
-            padding: 0;
-            margin: 10px 0;
-            box-sizing: border-box;
+            max-width: 900px;
+            font-size: 1.8rem;
+            padding: 0 10px;
+        }
+        
+        .edge-text-left, .edge-text-right {
+            white-space: nowrap;
         }
 
         /* Icon Button Styling */
@@ -98,9 +101,9 @@
         /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
             .description {
-                padding: 0 10px;
+                padding: 0 15px;
             }
-            .edge-text {
+            .edge-text-container {
                 font-size: 1.2rem;
             }
         }
@@ -108,16 +111,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="edge-text">
-            <span id="top-edge-text-left"></span>
+        <div class="edge-text-container">
+            <span class="edge-text-left">////////////////////////////////////////</span>
             <span>UNFXD//DSGN</span>
         </div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="edge-text">
+        <div class="edge-text-container">
             <span>ONGOING</span>
-            <span id="bottom-edge-text-right"></span>
+            <span class="edge-text-right">////////////////////////////////////////</span>
         </div>
     
         <!-- Button Container -->
@@ -130,24 +133,5 @@
             </a>
         </div>
     </div>
-
-    <script>
-        // Function to generate slashes for left- and right-aligned edge text
-        function generateEdgeText() {
-            const containerWidth = document.querySelector('.container').clientWidth;
-            const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            const characterWidth = fontSize * 0.6; // Approximate width per character
-            const slashCount = Math.floor(containerWidth / characterWidth);
-
-            const slashes = '/'.repeat(Math.floor(slashCount / 2));
-
-            document.getElementById('top-edge-text-left').textContent = slashes;
-            document.getElementById('bottom-edge-text-right').textContent = slashes;
-        }
-
-        // Call the function on load and on resize
-        generateEdgeText();
-        window.addEventListener('resize', generateEdgeText);
-    </script>
 </body>
 </html>
