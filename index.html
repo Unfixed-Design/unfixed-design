@@ -51,36 +51,53 @@
             max-width: 900px;
         }
 
-        /* Styling for edge-text paragraphs */
+        /* Styling for dynamic edge-text */
         .edge-text {
-            font-size: 1.8rem; /* Default font size */
+            font-size: 1.5rem;
             text-align: center;
             margin: 10px 0;
-            padding: 5px 0;
-            max-width: 900px;
-            width: 100%;
+            white-space: nowrap;
             overflow: hidden;
         }
 
-        /* Responsive styling for smaller screens */
-        @media (max-width: 600px) {
-            .description {
-                padding: 0 15px;
-            }
-            .edge-text {
-                font-size: 1.2rem; /* Smaller font size on mobile */
-                padding: 0 5px; /* Adds padding around edges */
-            }
+        /* Icon Button Styling */
+        .icon-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 0;
+        }
+        
+        .icon-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Icon Styling */
+        .icon {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+            display: block;
+        }
+
+        /* Space between buttons */
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <p class="edge-text">////////////////////////////////////////UNFXD//DSGN///////////////////////////</p>
+        <p class="edge-text" id="top-edge-text"></p>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <p class="edge-text">///////////////////////////ONGOING////////////////////////////////////////////</p>
+        <p class="edge-text" id="bottom-edge-text"></p>
     
         <!-- Button Container -->
         <div class="button-container">
@@ -92,5 +109,23 @@
             </a>
         </div>
     </div>
+
+    <script>
+        // Function to generate slashes across the viewport width
+        function generateEdgeText() {
+            const screenWidth = window.innerWidth;
+            const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const characterWidth = fontSize * 0.6; // Approximate width per character
+            const slashCount = Math.floor(screenWidth / characterWidth);
+
+            const edgeText = '/'.repeat(slashCount);
+            document.getElementById('top-edge-text').textContent = edgeText + "UNFXD//DSGN" + edgeText;
+            document.getElementById('bottom-edge-text').textContent = edgeText + "ONGOING" + edgeText;
+        }
+
+        // Call the function on load and on resize
+        generateEdgeText();
+        window.addEventListener('resize', generateEdgeText);
+    </script>
 </body>
 </html>
