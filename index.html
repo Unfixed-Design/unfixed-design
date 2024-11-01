@@ -61,16 +61,26 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            position: relative; /* Positioning for embedded text */
         }
 
         /* Right-aligned for upper edge text */
         .edge-text.top {
-            text-align: right;
+            text-align: center;
         }
 
         /* Left-aligned for lower edge text */
         .edge-text.bottom {
-            text-align: left;
+            text-align: center;
+        }
+
+        /* Embedded text within hashes */
+        .embedded-text {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black; /* Matches the background */
+            padding: 0 10px; /* Padding for better spacing */
         }
 
         /* Icon Button Styling */
@@ -121,11 +131,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="edge-text top" id="edgeTextTop"></div>
+        <div class="edge-text top" id="edgeTextTop">
+            <span class="embedded-text">UNFXD//DSGN</span>
+        </div>
         <div class="title-line">UNFIXED//</div>
         <div class="title-line">///DESIGN</div>
         <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how slow-form spatial use and atypical building can construct overarching entities of value. In short, it is not just what these builders build, but how they build that should be seen as forms worthy of conservation. Assessment criteria should account for this heritage.</h2>
-        <div class="edge-text bottom" id="edgeTextBottom"></div>
+        <div class="edge-text bottom" id="edgeTextBottom">
+            <span class="embedded-text">ONGOING</span>
+        </div>
     
         <!-- Button Container -->
         <div class="button-container">
