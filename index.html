@@ -27,7 +27,7 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 30px 10px; /* Increased top padding */
+            padding: 30px 0; /* Padding on top, no side padding */
         }
 
         /* Title Styling */
@@ -49,17 +49,18 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
+            padding: 0 10px; /* Add side padding to description */
         }
 
         /* Styling for hash lines */
         .hash-line {
             font-size: 1.8rem;
-            margin: 5px 0; /* Reduced margin */
-            width: calc(100% - 20px); /* Ensures it spans the full width of the container minus padding */
-            padding: 0 10px; /* Adds padding on left and right */
-            text-align: center; /* Center alignment */
-            overflow: hidden; /* Prevents overflow */
+            margin: 5px 0; /* Vertical spacing */
+            width: 100%; /* Full width */
+            padding: 0 10px; /* Side padding */
+            overflow: hidden; /* Prevent overflow */
             white-space: nowrap; /* Prevent text wrapping */
+            text-align: center; /* Center text */
         }
 
         /* Icon Button Styling */
@@ -99,10 +100,7 @@
             }
             .hash-line {
                 font-size: 1.2rem; /* Reduces font size */
-                width: calc(100% - 20px); /* Limits width on mobile */
                 padding: 0 10px; /* Maintains padding */
-                overflow: hidden; /* Prevents overflow */
-                white-space: nowrap; /* Prevent text wrapping */
             }
         }
     </style>
