@@ -39,14 +39,13 @@
             align-items: center;
             max-width: 900px;
             width: 100%;
-            padding: 0px;
+            padding: 0;
             position: relative;
             z-index: 1;
         }
 
-        /* Title Styling (Desktop) */
+        /* Title Styling */
         .title-line {
-            font-size: calc(14vw + 30px);
             font-family: Impact, Arial Black, sans-serif;
             font-weight: bold;
             text-transform: uppercase;
@@ -55,17 +54,31 @@
             text-align: center;
         }
 
-        /* Adjust top margin for the first title to reduce gap (Desktop) */
-        .title-line:first-of-type {
-            margin-top: -5px;
+        /* Specific desktop title styling */
+        @media (min-width: 601px) {
+            .title-line {
+                font-size: calc(14vw + 30px);
+            }
+            .title-line:first-of-type {
+                margin-top: -5px;
+            }
+            .title-line + .title-line {
+                margin-top: -30px;
+            }
         }
 
-        /* Reduce gap between the two title lines (Desktop) */
-        .title-line + .title-line {
-            margin-top: -30px;
+        /* Specific mobile title styling */
+        @media (max-width: 600px) {
+            .title-line {
+                font-size: calc(22vw + 10px); /* Increase for mobile */
+                margin-top: -10px;
+            }
+            .title-line + .title-line {
+                margin-top: -20px; /* Closer spacing */
+            }
         }
 
-        /* Subtext Styling (Desktop) */
+        /* Subtext Styling */
         .description {
             font-size: 20px;
             text-align: justify;
@@ -75,7 +88,7 @@
             max-width: 900px;
         }
 
-        /* Styling for edge-text paragraphs (Desktop) */
+        /* Styling for edge-text paragraphs */
         .edge-text {
             font-size: 1.8rem;
             text-align: center;
@@ -88,7 +101,7 @@
             text-overflow: ellipsis;
         }
 
-        /* Adjust bottom margin for the first edge-text to reduce gap (Desktop) */
+        /* Adjusted edge-text spacing for desktop and mobile */
         .edge-text:first-of-type {
             margin-bottom: -5px;
         }
@@ -123,50 +136,38 @@
             margin-top: 6px;
         }
 
-        /* Mobile adjustments */
+        /* Responsive description and edge-text styling for mobile */
         @media (max-width: 600px) {
-            /* Reduce title font size and spacing on mobile */
-            .title-line {
-                font-size: calc(12vw + 15px); /* Increased slightly for readability */
-                line-height: 1.1;
-            }
-            .title-line:first-of-type {
-                margin-top: -10px;
-            }
-            .title-line + .title-line {
-                margin-top: -15px;
-            }
-
-            /* Larger font size for description on mobile */
             .description {
-                font-size: 18px; /* Increased for mobile readability */
+                font-size: 16px;
                 padding: 0 15px;
-                text-align: left; /* Align left for improved readability on smaller screens */
             }
-
-            /* Adjust edge-text styling for mobile */
             .edge-text {
-                font-size: 1.5rem; /* Slightly larger for mobile readability */
+                font-size: 1.2rem;
                 max-width: 90vw;
                 padding: 0 10px;
                 white-space: normal;
                 overflow: hidden;
                 text-overflow: clip;
             }
-
-            /* Adjust vertical padding for mobile */
             .edge-text:first-of-type {
                 margin-bottom: 13px;
-            }
-
-            /* Increase gap between icon buttons for mobile */
-            .button-container {
-                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Video Section -->
+    <!--
+<div class="video-section">
+    <video autoplay muted loop class="video-background">
+        <source src="videos/your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+</div>
+-->
+
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
         <div class="title-line">UNFIXED//</div>
