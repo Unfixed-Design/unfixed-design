@@ -127,7 +127,7 @@
         @media (max-width: 600px) {
             /* Reduce title font size and spacing on mobile */
             .title-line {
-                font-size: calc(10vw + 20px);
+                font-size: calc(12vw + 15px); /* Increased slightly for readability */
                 line-height: 1.1;
             }
             .title-line:first-of-type {
@@ -137,15 +137,16 @@
                 margin-top: -15px;
             }
 
-            /* Smaller font size for description on mobile */
+            /* Larger font size for description on mobile */
             .description {
-                font-size: 16px;
+                font-size: 18px; /* Increased for mobile readability */
                 padding: 0 15px;
+                text-align: left; /* Align left for improved readability on smaller screens */
             }
 
             /* Adjust edge-text styling for mobile */
             .edge-text {
-                font-size: 1.2rem;
+                font-size: 1.5rem; /* Slightly larger for mobile readability */
                 max-width: 90vw;
                 padding: 0 10px;
                 white-space: normal;
