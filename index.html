@@ -50,9 +50,14 @@
             font-family: Impact, Arial Black, sans-serif;
             font-weight: bold;
             text-transform: uppercase;
-            margin: 0px 0; /* Adjust this value for vertical spacing */
+            margin: 0;
             line-height: 1;
             text-align: center;
+        }
+
+        /* Adjust top margin for the first title to reduce gap */
+        .title-line:first-of-type {
+            margin-top: -5px; /* Adjust this value as needed */
         }
 
         /* Subtext Styling */
@@ -76,6 +81,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* Adjust bottom margin for the first edge-text to reduce gap */
+        .edge-text:first-of-type {
+            margin-bottom: -5px; /* Adjust this value as needed */
         }
 
         /* Icon Button Styling */
