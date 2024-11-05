@@ -80,19 +80,26 @@
             text-overflow: ellipsis;
         }
 
-        /* Back Button Styling */
-        .back-button {
+        /* Button Container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-top: 20px;
+        }
+
+        /* Button Styling */
+        .button {
             display: inline-block;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .back-button img {
+        .button img {
             width: 50px; /* Adjust width as needed */
             height: 50px; /* Adjust height as needed */
             filter: brightness(0) invert(1); /* Optional styling to match page theme */
         }
-        .back-button:hover {
+        .button:hover {
             transform: scale(1.1); /* Adds zoom effect on hover */
         }
     </style>
@@ -104,10 +111,23 @@
         <h2 class="description">More information on the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, and resources.</h2>
         <p class="edge-text">////DETAILS////////////////////////////////////////////////////////////////////</p>
         
-        <!-- Back Button with Custom Image -->
-        <a href="index.html" class="back-button">
-            <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="<">
-        </a>
+        <!-- Button Container with Multiple Buttons -->
+        <div class="button-container">
+            <!-- Back Button -->
+            <a href="index.html" class="button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="Back">
+            </a>
+            
+            <!-- Contact Button -->
+            <a href="mailto:your-email@example.com" class="button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/contact_icon.png" alt="Contact">
+            </a>
+            
+            <!-- Instagram Button -->
+            <a href="https://instagram.com/yourprofile" target="_blank" class="button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" alt="Instagram">
+            </a>
+        </div>
     </div>
 </body>
 </html>
