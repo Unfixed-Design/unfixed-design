@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFXD//DSGN - Another Page</title>
+    <title>UNFXD//DSGN - About Page</title>
     <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
     <style>
         /* Base styling */
@@ -19,17 +19,6 @@
             box-sizing: border-box;
             overflow-x: hidden;
             position: relative;
-        }
-
-        /* Video styling */
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
         }
 
         /* Container styling */
@@ -54,27 +43,17 @@
             text-align: center;
         }
 
-        /* Specific desktop title styling */
+        /* Responsive styling for desktop and mobile */
         @media (min-width: 601px) {
             .title-line {
                 font-size: calc(14vw + 30px);
             }
-            .title-line:first-of-type {
-                margin-top: -5px;
-            }
-            .title-line + .title-line {
-                margin-top: -28px;
-            }
         }
 
-        /* Specific mobile title styling */
         @media (max-width: 600px) {
             .title-line {
                 font-size: calc(22vw + 3px);
                 margin-top: -10px;
-            }
-            .title-line + .title-line {
-                margin-top: -5px;
             }
         }
 
@@ -88,7 +67,7 @@
             max-width: 900px;
         }
 
-        /* Styling for edge-text paragraphs */
+        /* Edge-text Styling */
         .edge-text {
             font-size: 1.8rem;
             text-align: center;
@@ -101,63 +80,34 @@
             text-overflow: ellipsis;
         }
 
-        /* Responsive description and edge-text styling for mobile */
-        @media (max-width: 600px) {
-            .description {
-                font-size: 17px;
-                padding: 0 20px;
-                margin-top: 9px;
-            }
-            .edge-text {
-                font-size: 1.2rem;
-                max-width: 90vw;
-                padding: 0 11px;
-                white-space: normal;
-                overflow: hidden;
-                text-overflow: clip;
-            }
-            .edge-text:first-of-type {
-                margin-bottom: 13px;
-            }
-        }
-
         /* Back Button Styling */
         .back-button {
-            font-size: 18px;
-            color: white;
-            background-color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .back-button img {
+            width: 50px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+            filter: brightness(0) invert(1); /* Optional styling to match page theme */
         }
         .back-button:hover {
-            background-color: #555;
+            transform: scale(1.1); /* Adds zoom effect on hover */
         }
     </style>
 </head>
 <body>
-    <!-- Video Section -->
-    <!-- Uncomment and replace the source if you want a background video on this page -->
-    <!--
-    <div class="video-section">
-        <video autoplay muted loop class="video-background">
-            <source src="videos/your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-    -->
-    
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
-        <div class="title-line">Another Page</div>
+        <div class="title-line">About Page</div>
         <h2 class="description">Welcome to another section of the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, or resources.</h2>
         <p class="edge-text">////EXPLORE/////////////////////////////////////////////////////////////////</p>
         
-        <!-- Back Button to Return to Main Page -->
-        <a href="index.html" class="back-button">Back to Home</a>
+        <!-- Back Button with Custom Image -->
+        <a href="index.html" class="back-button">
+            <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="Back to Home">
+        </a>
     </div>
 </body>
 </html>
