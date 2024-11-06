@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFXD//DSGN</title>
+    <title>UNFXD//DSGN - About Page</title>
     <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
     <style>
         /* Base styling */
@@ -19,17 +19,6 @@
             box-sizing: border-box;
             overflow-x: hidden;
             position: relative;
-        }
-
-        /* Video styling */
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
         }
 
         /* Container styling */
@@ -54,32 +43,17 @@
             text-align: center;
         }
 
-        /* Specific desktop title styling */
+        /* Responsive styling for desktop and mobile */
         @media (min-width: 601px) {
             .title-line {
                 font-size: calc(14vw + 30px);
             }
-            .title-line:first-of-type {
-                margin-top: -5px;
-            }
-            .title-line + .title-line {
-                margin-top: -28px;
-            }
-
-            /* Adjust button positioning for desktop */
-            .button-container {
-                margin-top: 15px; /* Adjust this value to move buttons up or down */
-            }
         }
 
-        /* Specific mobile title styling */
         @media (max-width: 600px) {
             .title-line {
-                font-size: calc(22vw + 3px); /* Increase for mobile */
+                font-size: calc(22vw + 3px);
                 margin-top: -10px;
-            }
-            .title-line + .title-line {
-                margin-top: -5px; /* Closer spacing */
             }
         }
 
@@ -91,9 +65,11 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
+            padding: 0 20px; /* Same padding as index.html for mobile */
+            margin-top: 9px; /* Consistent spacing as index.html */
         }
 
-        /* Styling for edge-text paragraphs */
+        /* Edge-text Styling */
         .edge-text {
             font-size: 1.8rem;
             text-align: center;
@@ -111,42 +87,30 @@
             margin-bottom: -5px;
         }
 
-        /* Icon Button Styling */
-        .icon-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            padding: 0;
-        }
-
-        .icon-button:hover {
-            transform: scale(1.1);
-        }
-
-        /* Icon Styling */
-        .icon {
-            width: 30px;
-            height: 30px;
-            filter: brightness(0) invert(1);
-            display: block;
-        }
-
-        /* Space between buttons */
+        /* Button Container */
         .button-container {
             display: flex;
-            flex-direction: row;
             justify-content: center;
             gap: 10px;
-            margin-top: 0px;
+            margin-top: 20px;
+        }
+
+        /* Button Styling */
+        .button img {
+            width: 30px; /* Matches size used in index.html */
+            height: 30px; /* Matches size used in index.html */
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s ease;
+        }
+        .button img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
         }
 
         /* Responsive description and edge-text styling for mobile */
         @media (max-width: 600px) {
             .description {
                 font-size: 17px;
-                padding: 0 20px;
-                margin-top: 9px; /* Adjust this value to move description down */
+                padding: 0 20px; /* Add padding for better readability */
             }
             .edge-text {
                 font-size: 1.2rem;
@@ -163,34 +127,27 @@
     </style>
 </head>
 <body>
- <!-- Video Section -->
-    <!--
-<div class="video-section">
-    <video autoplay muted loop class="video-background">
-        <source src="videos/your-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-</div>
--->
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
-        <div class="title-line">UNFIXED//</div>
-        <div class="title-line">///DESIGN</div>
-        <h2 class="description">This is a feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can form overarching entities of value. In specific circumstances, it is not just <i>what</i> builders build, but <i>how</i> they build that should be seen as forms worthy of conservation. Follow us here as we move along.</h2>
-        <p class="edge-text">////ONGOING/////////////////////////////////////////////////////////////////</p>
-    
-        <!-- Button Container -->
+        <div class="title-line">DETAILS//</div>
+        <h2 class="description">More information on the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, and resources. More information on the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, and resources. More information on the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, and resources. More information on the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, and resources. More information on the UNFIXED//DESIGN project. This page is dedicated to exploring additional content, updates, and resources.</h2>
+        <p class="edge-text">//////DETAILS//////////////////////////////////////////////////////////////////</p>
+        
+        <!-- Button Container with Updated Buttons -->
         <div class="button-container">
-            <a href="mailto:gskeate@sms.ed.ac.uk?subject=Contact%20from%20UNFXD" title="Contact Us" class="icon-button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" class="icon" alt="Contact Us">
+            <!-- Contact Button -->
+            <a href="mailto:g.skeate@sms.ed.ac.uk" class="button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" alt="Contact">
             </a>
-            <a href="https://www.instagram.com/unfixeddesign/" target="_blank" title="Instagram" class="icon-button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" class="icon" alt="Instagram">
+            
+            <!-- Instagram Button -->
+            <a href="https://instagram.com/unfixeddesign/" target="_blank" class="button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" alt="Instagram">
             </a>
-            <!-- New Page Button -->
-            <a href="/about-page.html" target="_self" title="About Page" class="icon-button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/about_icon.png" class="icon" alt="Another Page">
+
+            <!-- Back Button -->
+            <a href="index.html" class="button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="Back">
             </a>
         </div>
     </div>
