@@ -65,6 +65,8 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
+            padding: 0 20px; /* Same padding as index.html for mobile */
+            margin-top: 9px; /* Consistent spacing as index.html */
         }
 
         /* Edge-text Styling */
@@ -78,6 +80,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        /* Adjusted edge-text spacing for desktop and mobile */
+        .edge-text:first-of-type {
+            margin-bottom: -5px;
         }
 
         /* Button Container */
@@ -98,6 +105,25 @@
         .button img:hover {
             transform: scale(1.1); /* Slight zoom on hover */
         }
+
+        /* Responsive description and edge-text styling for mobile */
+        @media (max-width: 600px) {
+            .description {
+                font-size: 17px;
+                padding: 0 20px; /* Add padding for better readability */
+            }
+            .edge-text {
+                font-size: 1.2rem;
+                max-width: 90vw;
+                padding: 0 11px;
+                white-space: normal;
+                overflow: hidden;
+                text-overflow: clip;
+            }
+            .edge-text:first-of-type {
+                margin-bottom: 13px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,7 +135,7 @@
         
         <!-- Button Container with Updated Buttons -->
         <div class="button-container">
-        <!-- Contact Button -->
+            <!-- Contact Button -->
             <a href="mailto:g.skeate@sms.ed.ac.uk" class="button">
                 <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" alt="Contact">
             </a>
@@ -119,11 +145,10 @@
                 <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" alt="Instagram">
             </a>
 
-                <!-- Back Button -->
+            <!-- Back Button -->
             <a href="index.html" class="button">
                 <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="Back">
             </a>
-            
         </div>
     </div>
 </body>
