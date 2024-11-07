@@ -67,23 +67,14 @@
             max-width: 900px;
             padding: 0 20px; /* Same padding as index.html for mobile */
             margin-top: 9px; /* Consistent spacing as index.html */
-        }
-
-        /* Enable hyphenation for mobile */
-        @media (max-width: 600px) {
-            .description {
-                font-size: 19px;
-                padding: 0 20px;
-                hyphens: auto;
-                overflow-wrap: break-word;
-            }
+            hyphens: auto; /* Mobile-friendly hyphenation */
         }
 
         /* Edge-text Styling */
         .edge-text {
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* Matches about page size */
             text-align: center;
-            margin: 12px 0;
+            margin: 13px 0; /* Matches padding between edge-text in about page */
             padding: 5px 0;
             max-width: 900px;
             width: 100%;
@@ -108,13 +99,37 @@
 
         /* Button Styling */
         .button img {
-            width: 30px;
-            height: 30px;
+            width: 30px; /* Matches size used in index.html */
+            height: 30px; /* Matches size used in index.html */
             filter: brightness(0) invert(1);
             transition: transform 0.3s ease;
         }
         .button img:hover {
-            transform: scale(1.1);
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        /* Responsive description and edge-text styling for mobile */
+        @media (max-width: 600px) {
+            .description {
+                font-size: 19px;
+                padding: 0 20px; /* Add padding for better readability */
+            }
+            .edge-text {
+                font-size: 1.2rem;
+                max-width: 90vw;
+                padding: 0 11px;
+                white-space: normal;
+                overflow: hidden;
+                text-overflow: clip;
+                margin: 13px 0; /* Matches about page mobile margin */
+            }
+            .edge-text:first-of-type {
+                margin-bottom: 13px;
+            }
+            .button-container {
+                margin-top: 5px; /* Adjust for mobile consistency */
+                margin-bottom: 30px; /* Adjust for mobile consistency */
+            }
         }
     </style>
 </head>
@@ -122,7 +137,7 @@
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
         <div class="title-line">CONTACT/</div>
-        <h2 class="description">For enquiries into UNFIXED/DESIGN, reach out to: g.skeate@sms.ed.ac.uk or use the mail icon below. Feel free to reach out for general introductions or questions, as well as thoughts on urban planning, cultural heritage, building, travel, your city or Glasgow.</h2>
+        <h2 class="description">For enquiries into UNFIXED/DESIGN, reach out directly to: g.skeate@sms.ed.ac.uk or use the mail icon below. Feel free to reach out for general introductions or questions, as well as thoughts on urban planning, cultural heritage, building, travel, your city or Glasgow.</h2>
         <p class="edge-text">////CONTACT//////////////////////////////////////////////////////////////////</p>
         
         <!-- Button Container with Updated Buttons -->
