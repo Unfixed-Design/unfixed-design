@@ -65,8 +65,8 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
-            padding: 0 20px; /* Same padding as index.html for mobile */
-            margin-top: 9px; /* Consistent spacing as index.html */
+            padding: 0 20px;
+            margin-top: 9px;
         }
 
         /* Edge-text Styling */
@@ -92,32 +92,33 @@
             display: flex;
             justify-content: center;
             gap: 5px;
-            margin-top: 0px; /* Adjusted to match spacing from edge-text */
-            margin-bottom: 40px; /* Added margin for consistent spacing from bottom */
+            margin-top: 0px;
+            margin-bottom: 40px;
         }
 
         /* Button Styling */
         .button img {
-            width: 30px; /* Matches size used in index.html */
-            height: 30px; /* Matches size used in index.html */
+            width: 30px;
+            height: 30px;
             filter: brightness(0) invert(1);
             transition: transform 0.3s ease;
-            }
-            .button-container {
-                margin-top: 0px; /* Adjust for mobile consistency */
-                margin-bottom: 30px; /* Adjust for mobile consistency */
-            }
-
+        }
+        .button-container {
+            margin-top: 0px;
+            margin-bottom: 30px;
         }
         .button img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
+            transform: scale(1.1);
         }
 
         /* Responsive description and edge-text styling for mobile */
         @media (max-width: 600px) {
             .description {
                 font-size: 19px;
-                padding: 0 20px; /* Add padding for better readability */
+                padding: 0 20px;
+                line-height: 1.6; /* Added line height for better readability */
+                letter-spacing: 0.02em; /* Slight letter spacing adjustment */
+                hyphens: auto; /* Enable hyphenation for better text flow */
             }
             .edge-text {
                 font-size: 1.2rem;
