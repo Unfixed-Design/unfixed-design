@@ -1,163 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFXD//DSGN - Contact Page</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
-    <style>
-        /* Base styling */
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: black;
-            color: white;
-            font-family: Avenir, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNFXD//DSGN</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: black;
+      color: white;
+      font-family: Avenir, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-        /* Container styling */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 900px;
-            width: 100%;
-            padding: 0;
-            position: relative;
-            z-index: 1;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
 
-        /* Title Styling */
-        .title-line {
-            font-family: Impact, Arial Black, sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0;
-            line-height: 1;
-            text-align: center;
-        }
+    .title-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      display: inline-block;
+    }
 
-        /* Responsive styling for desktop and mobile */
-        @media (min-width: 601px) {
-            .title-line {
-                font-size: calc(14vw + 30px);
-            }
-        }
+    .title-line {
+      font-family: Impact, Arial Black, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+      text-align: center;
+      transition: transform 0.25s ease;
+    }
 
-        @media (max-width: 600px) {
-            .title-line {
-                font-size: calc(22vw + 3px);
-                margin-top: -10px;
-            }
-        }
+    .title-link:hover .title-line:first-of-type {
+      transform: translateX(-4px);
+    }
 
-        /* Subtext Styling */
-        .description {
-            font-size: 21px;
-            text-align: justify;
-            margin: 0;
-            font-weight: 300;
-            text-rendering: optimizeLegibility;
-            max-width: 900px;
-            padding: 0 20px; /* Same padding as index.html for mobile */
-            margin-top: 9px; /* Consistent spacing as index.html */
-            hyphens: auto; /* Mobile-friendly hyphenation */
-        }
+    .title-link:hover .title-line:last-of-type {
+      transform: translateX(4px);
+    }
 
-        /* Edge-text Styling */
-        .edge-text {
-            font-size: 1.8rem; /* Matches about page size */
-            text-align: center;
-            margin: 13px 0; /* Matches padding between edge-text in about page */
-            padding: 5px 0;
-            max-width: 900px;
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+    @media (min-width: 601px) {
+      .title-line {
+        font-size: calc(14vw + 30px);
+      }
+      .title-line:first-of-type {
+        margin-top: -5px;
+      }
+      .title-line + .title-line {
+        margin-top: -28px;
+      }
+    }
 
-        /* Adjusted edge-text spacing for desktop and mobile */
-        .edge-text:first-of-type {
-            margin-bottom: -5px;
-        }
+    @media (max-width: 600px) {
+      .title-line {
+        font-size: calc(22vw + 3px);
+        margin-top: -10px;
+      }
+      .title-line + .title-line {
+        margin-top: -5px;
+      }
+    }
 
-        /* Button Container */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px; /* Matches the spacing used on about page */
-            margin-top: 0px; /* Adjusted to match spacing from edge-text */
-            margin-bottom: 40px; /* Added margin for consistent spacing from bottom */
-        }
+    .description {
+      font-size: 21px;
+      text-align: justify;
+      margin: 0;
+      font-weight: 300;
+      text-rendering: optimizeLegibility;
+      max-width: 900px;
+      padding: 0 20px;
+      margin-top: 9px;
+      hyphens: auto;
+    }
 
-        /* Button Styling */
-        .button img {
-            width: 30px; /* Matches size used in index.html */
-            height: 30px; /* Matches size used in index.html */
-            filter: brightness(0) invert(1);
-            transition: transform 0.3s ease;
-        }
-        .button img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
-        }
+    .paragraph {
+      margin-bottom: 20px;
+    }
 
-        /* Responsive description and edge-text styling for mobile */
-        @media (max-width: 600px) {
-            .description {
-                font-size: 19px;
-                padding: 0 20px; /* Add padding for better readability */
-            }
-            .edge-text {
-                font-size: 1.2rem;
-                max-width: 90vw;
-                padding: 0 11px;
-                white-space: normal;
-                overflow: hidden;
-                text-overflow: clip;
-                margin: 13px 0; /* Matches about page mobile margin */
-            }
-            .edge-text:first-of-type {
-                margin-bottom: 13px;
-            }
-            .button-container {
-                margin-top: 5px; /* Adjust for mobile consistency */
-                margin-bottom: 30px; /* Adjust for mobile consistency */
-                gap: 10px; /* Ensure consistent spacing on mobile */
-            }
-        }
-    </style>
+    .edge-text {
+      font-size: 1.8rem;
+      text-align: center;
+      margin: 13px 0;
+      padding: 5px 0;
+      max-width: 900px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .edge-text:first-of-type {
+      margin-bottom: -5px;
+    }
+
+    .dropbox-submit {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      border: 2px solid white;
+      color: white;
+      padding: 12px 22px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .dropbox-submit:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .text-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      font-family: Avenir, Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .text-nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .text-nav a:hover {
+      color: #ccc;
+    }
+
+    .text-nav span {
+      color: white;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .description {
+        font-size: 19px;
+        padding: 0 20px;
+        margin-top: 9px;
+      }
+      .paragraph {
+        margin-bottom: 18px;
+      }
+      .edge-text {
+        font-size: 1.2rem;
+        max-width: 90vw;
+        padding: 0 11px;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: clip;
+        margin: 13px 0;
+      }
+      .edge-text:first-of-type {
+        margin-bottom: 13px;
+      }
+      .text-nav {
+        font-size: 1rem;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
-        <div class="title-line">CONTACT/</div>
-        <h2 class="description">For enquiries into UNFIXED/DESIGN, reach out to: g.skeate@sms.ed.ac.uk or use the mail icon below. Feel free to reach out for general introductions or questions, as well as thoughts on urban planning, cultural heritage, building, travel, your city or Glasgow.</h2>
-        <p class="edge-text">////CONTACT//////////////////////////////////////////////////////////////////</p>
-        
-        <!-- Button Container with Updated Buttons -->
-        <div class="button-container">
-            <!-- Contact Button with Subject Line -->
-            <a href="mailto:g.skeate@sms.ed.ac.uk?subject=Contact%20from%20UNFXD" class="button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" alt="Contact">
-            </a>
+  <div class="container">
+    <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
 
-            <!-- Instagram Button -->
-            <a href="https://instagram.com/unfixeddesign/" target="_blank" class="button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" alt="Instagram">
-            </a>
+    <!-- Clickable Title Link to Homepage -->
+    <a href="/index.html" class="title-link" title="Return to homepage">
+      <div class="title-line">UNFIXED//</div>
+      <div class="title-line">///DESIGN</div>
+    </a>
 
-            <!-- Back Button -->
-            <a href="/" class="button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="Back">
-            </a>
-        </div>
+    <!-- Contact Page Description Text -->
+    <div class="description">
+      <p class="paragraph">
+        CONTRIBUTE TO THE ARCHIVE///////This project is concerned with the material inheritances and spatial negotiations that animate Glasgow. By attending to self-built adaptations—such as those of the city’s Showpeople community—and to the lingering logics of industrial infrastructures, the work traces a lived urbanism that persists alongside, and often in spite of, official plans. The material on this site, along with our public-facing events, invites addition, refusal, and re-reading. Rather than settle or conclude, we suggest that Glasgow’s spaces remain in motion: unsettled, provisional, and continually shaped through entanglement.
+      </p>
+      <p class="paragraph">
+        You're welcome to contribute in whatever form feels right—text, audio, video, or links to your work. Submissions can be anonymous or named. We’ll be in touch.
+      </p>
     </div>
+
+    <!-- Dropbox Submission Button -->
+    <a href="https://www.dropbox.com/request/2yKCLUiAZdRrSU9c1rvR"  
+       class="dropbox-submit" target="_blank" title="Submit to the archive">
+       ✚ Submit a File
+    </a>
+
+    <!-- Text Navigation Strip -->
+    <div class="text-nav">
+      <a href="/about-page.html" target="_self">ABOUT</a>
+      <span>////</span>
+      <a href="https://www.instagram.com/unfixeddesign/" target="_blank">SOCIAL</a>
+      <span>////</span>
+      <a href="/contact-page.html" target="_self">CONTACT</a>
+    </div>
+  </div>
 </body>
 </html>
