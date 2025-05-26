@@ -35,12 +35,8 @@
       text-decoration: none;
       color: inherit;
       cursor: pointer;
-    }
-
-    .title-link:hover .title-line {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 6px;
+      display: inline-block;
+      transition: transform 0.2s ease;
     }
 
     .title-line {
@@ -50,6 +46,15 @@
       margin: 0;
       line-height: 1;
       text-align: center;
+      transition: transform 0.25s ease;
+    }
+
+    .title-link:hover .title-line:first-of-type {
+      transform: translateX(-4px);
+    }
+
+    .title-link:hover .title-line:last-of-type {
+      transform: translateX(4px);
     }
 
     @media (min-width: 601px) {
@@ -179,7 +184,7 @@
   <div class="container">
     <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
 
-    <!-- Clickable Title Link to Homepage -->
+    <!-- Clickable Title Link with offset hover -->
     <a href="/index.html" class="title-link" title="Return to homepage">
       <div class="title-line">UNFIXED//</div>
       <div class="title-line">///DESIGN</div>
@@ -194,9 +199,6 @@
        class="dropbox-submit" target="_blank" title="Submit to the archive">
        ✚ Submit a File
     </a>
-
-    <p class="edge-text">////CONTACT//////////////////////////////////////////////////////////////////</p>
-
     <!-- Text Navigation Strip -->
     <div class="text-nav">
       <a href="/about-page.html" target="_self">ABOUT</a>
