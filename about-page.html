@@ -45,26 +45,15 @@
       margin: 0;
       line-height: 1;
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.25s ease;
     }
 
     .title-link:hover .title-line:first-of-type {
       transform: translateX(-4px);
-      animation: glitch 0.3s linear 1;
     }
 
     .title-link:hover .title-line:last-of-type {
       transform: translateX(4px);
-      animation: glitch 0.3s linear 1;
-    }
-
-    @keyframes glitch {
-      0%   { transform: translateX(0);   opacity: 1; }
-      20%  { transform: translateX(-2px); opacity: 0.8; }
-      40%  { transform: translateX(2px);  opacity: 1; }
-      60%  { transform: translateX(-1px); opacity: 0.9; }
-      80%  { transform: translateX(1px);  opacity: 1; }
-      100% { transform: translateX(0);    opacity: 1; }
     }
 
     @media (min-width: 601px) {
@@ -99,6 +88,10 @@
       padding: 0 20px;
       margin-top: 9px;
       hyphens: auto;
+    }
+
+    .paragraph {
+      margin-bottom: 20px;
     }
 
     .edge-text {
@@ -170,6 +163,9 @@
         padding: 0 20px;
         margin-top: 9px;
       }
+      .paragraph {
+        margin-bottom: 18px;
+      }
       .edge-text {
         font-size: 1.2rem;
         max-width: 90vw;
@@ -194,28 +190,36 @@
   <div class="container">
     <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
 
-    <!-- Clickable Title Link with offset + glitch effect -->
+    <!-- Clickable Title Link to Homepage -->
     <a href="/index.html" class="title-link" title="Return to homepage">
       <div class="title-line">UNFIXED//</div>
       <div class="title-line">///DESIGN</div>
     </a>
 
-   <h2 class="description">
-This project is concerned with the material inheritances and spatial negotiations that animate Glasgow. By attending to self-built adaptations—such as those of the city’s Showpeople community—and to the lingering logics of industrial infrastructures, the work traces a lived urbanism that persists alongside, and often in spite of, official plans.
-The material on this site, along with our public-facing events, invites addition, refusal, and re-reading. Rather than settle or conclude, we suggest that Glasgow’s spaces remain in motion: unsettled, provisional, and continually shaped through entanglement.
-You're welcome to contribute in whatever form feels right—text, audio, video, or links to your work. Submissions can be anonymous or named. We’ll be in touch.
-  </h2>
+    <!-- Contact Page Description Text -->
+    <div class="description">
+      <p class="paragraph">
+        CONTRIBUTE TO THE ARCHIVE///////This project is concerned with the material inheritances and spatial negotiations that animate Glasgow. By attending to self-built adaptations—such as those of the city’s Showpeople community—and to the lingering logics of industrial infrastructures, the work traces a lived urbanism that persists alongside, and often in spite of, official plans.
+      </p>
+      <p class="paragraph">
+        The material on this site, along with our public-facing events, invites addition, refusal, and re-reading. Rather than settle or conclude, we suggest that Glasgow’s spaces remain in motion: unsettled, provisional, and continually shaped through entanglement.
+      </p>
+      <p class="paragraph">
+        You're welcome to contribute in whatever form feels right—text, audio, video, or links to your work. Submissions can be anonymous or named. We’ll be in touch.
+      </p>
+    </div>
 
     <!-- Dropbox Submission Button -->
     <a href="https://www.dropbox.com/request/2yKCLUiAZdRrSU9c1rvR"  
        class="dropbox-submit" target="_blank" title="Submit to the archive">
        ✚ Submit a File
     </a>
+
     <!-- Text Navigation Strip -->
     <div class="text-nav">
       <a href="/about-page.html" target="_self">ABOUT</a>
       <span>////</span>
-      <a href="https://www.instagram.com/unfixeddesign/" target="_blank">INSTAGRAM</a>
+      <a href="https://www.instagram.com/unfixeddesign/" target="_blank">SOCIAL</a>
       <span>////</span>
       <a href="/contact-page.html" target="_self">CONTACT</a>
     </div>
