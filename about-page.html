@@ -31,6 +31,18 @@
       z-index: 1;
     }
 
+    .title-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .title-link:hover .title-line {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 6px;
+    }
+
     .title-line {
       font-family: Impact, Arial Black, sans-serif;
       font-weight: bold;
@@ -166,8 +178,13 @@
 <body>
   <div class="container">
     <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
-    <div class="title-line">UNFIXED//</div>
-    <div class="title-line">///DESIGN</div>
+
+    <!-- Clickable Title Link to Homepage -->
+    <a href="/index.html" class="title-link" title="Return to homepage">
+      <div class="title-line">UNFIXED//</div>
+      <div class="title-line">///DESIGN</div>
+    </a>
+
     <h2 class="description">
       This is an ongoing, feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can form overarching entities of value. In specific circumstances, it is not just <i>what</i> builders build, but <i>how</i> they build that should be seen as forms worthy of conservation. Follow us here as we move along.
     </h2>
@@ -180,7 +197,7 @@
 
     <p class="edge-text">////CONTACT//////////////////////////////////////////////////////////////////</p>
 
-    <!-- New Text-Based Navigation -->
+    <!-- Text Navigation Strip -->
     <div class="text-nav">
       <a href="/about-page.html" target="_self">ABOUT</a>
       <span>////</span>
