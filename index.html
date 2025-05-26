@@ -1,198 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFXD//DSGN</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
-    <style>
-        /* Base styling */
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: black;
-            color: white;
-            font-family: Avenir, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNFXD//DSGN</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: black;
+      color: white;
+      font-family: Avenir, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-        /* Video styling */
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
 
-        /* Container styling */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 900px;
-            width: 100%;
-            padding: 0;
-            position: relative;
-            z-index: 1;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      width: 100%;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
 
-        /* Title Styling */
-        .title-line {
-            font-family: Impact, Arial Black, sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin: 0;
-            line-height: 1;
-            text-align: center;
-        }
+    .title-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      display: inline-block;
+    }
 
-        /* Specific desktop title styling */
-        @media (min-width: 601px) {
-            .title-line {
-                font-size: calc(14vw + 30px);
-            }
-            .title-line:first-of-type {
-                margin-top: -5px;
-            }
-            .title-line + .title-line {
-                margin-top: -28px;
-            }
+    .title-line {
+      font-family: Impact, Arial Black, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+      text-align: center;
+      transition: transform 0.25s ease;
+    }
 
-            /* Adjust button positioning for desktop */
-            .button-container {
-                margin-top: 15px;
-            }
-        }
+    .title-link:hover .title-line:first-of-type {
+      transform: translateX(-4px);
+    }
 
-        /* Specific mobile title styling */
-        @media (max-width: 600px) {
-            .title-line {
-                font-size: calc(22vw + 3px);
-                margin-top: -10px;
-            }
-            .title-line + .title-line {
-                margin-top: -5px;
-            }
-        }
+    .title-link:hover .title-line:last-of-type {
+      transform: translateX(4px);
+    }
 
-        /* Subtext Styling */
-        .description {
-            font-size: 21px;
-            text-align: justify;
-            margin: 0;
-            font-weight: 300;
-            text-rendering: optimizeLegibility;
-            max-width: 900px;
-            padding: 0 20px;
-            margin-top: 9px;
-            hyphens: auto;
-        }
+    @media (min-width: 601px) {
+      .title-line {
+        font-size: calc(14vw + 30px);
+      }
+      .title-line:first-of-type {
+        margin-top: -5px;
+      }
+      .title-line + .title-line {
+        margin-top: -28px;
+      }
+    }
 
-        /* Styling for edge-text paragraphs */
-        .edge-text {
-            font-size: 1.8rem;
-            text-align: center;
-            margin: 13px 0;
-            padding: 5px 0;
-            max-width: 900px;
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
+    @media (max-width: 600px) {
+      .title-line {
+        font-size: calc(22vw + 3px);
+        margin-top: -10px;
+      }
+      .title-line + .title-line {
+        margin-top: -5px;
+      }
+    }
 
-        /* Adjusted edge-text spacing for desktop and mobile */
-        .edge-text:first-of-type {
-            margin-bottom: -5px;
-        }
+    .description {
+      font-size: 21px;
+      text-align: justify;
+      margin: 0;
+      font-weight: 300;
+      text-rendering: optimizeLegibility;
+      max-width: 900px;
+      padding: 0 20px;
+      margin-top: 9px;
+      hyphens: auto;
+    }
 
-        /* Icon Button Styling */
-        .icon-button {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            padding: 0;
-        }
+    .edge-text {
+      font-size: 1.8rem;
+      text-align: center;
+      margin: 13px 0;
+      padding: 5px 0;
+      max-width: 900px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-        .icon-button:hover {
-            transform: scale(1.1);
-        }
+    .edge-text:first-of-type {
+      margin-bottom: -5px;
+    }
 
-        /* Icon Styling */
-        .icon {
-            width: 30px;
-            height: 30px;
-            filter: brightness(0) invert(1);
-            display: block;
-        }
+    .text-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      font-family: Avenir, Arial, sans-serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
 
-        /* Space between buttons */
-        .button-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 0px;
-            margin-bottom: 40px;
-        }
+    .text-nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        /* Responsive description and edge-text styling for mobile */
-        @media (max-width: 600px) {
-            .description {
-                font-size: 19px;
-                padding: 0 20px;
-                margin-top: 9px;
-            }
-            .edge-text {
-                font-size: 1.2rem;
-                max-width: 90vw;
-                padding: 0 11px;
-                white-space: normal;
-                overflow: hidden;
-                text-overflow: clip;
-                margin: 13px 0;
-            }
-            .edge-text:first-of-type {
-                margin-bottom: 13px;
-            }
-            .button-container {
-                margin-top: 5px;
-                margin-bottom: 30px;
-                gap: 10px;
-            }
-        }
-    </style>
+    .text-nav a:hover {
+      color: #ccc;
+    }
+
+    .text-nav span {
+      color: white;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .description {
+        font-size: 19px;
+        padding: 0 20px;
+        margin-top: 9px;
+      }
+      .edge-text {
+        font-size: 1.2rem;
+        max-width: 90vw;
+        padding: 0 11px;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: clip;
+        margin: 13px 0;
+      }
+      .edge-text:first-of-type {
+        margin-bottom: 13px;
+      }
+      .text-nav {
+        font-size: 1rem;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
-        <div class="title-line">UNFIXED//</div>
-        <div class="title-line">///DESIGN</div>
-        <h2 class="description">This is an ongoing, feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can form overarching entities of value. In specific circumstances, it is not just <i>what</i> builders build, but <i>how</i> they build that should be seen as forms worthy of conservation. Follow us here as we move along.</h2>
-        <p class="edge-text">////ONGOING/////////////////////////////////////////////////////////////////</p>
-    
-        <!-- Button Container -->
-        <div class="button-container">
-            <a href="/contact-page.html" target="_self" title="Contact Page" class="icon-button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" class="icon" alt="Contact Us">
-            </a>
-            <a href="https://www.instagram.com/unfixeddesign/" target="_blank" title="Instagram" class="icon-button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" class="icon" alt="Instagram">
-            </a>
-            <!-- New Page Button -->
-            <a href="/about-page.html" target="_self" title="About Page" class="icon-button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/about_icon.png" class="icon" alt="Another Page">
-            </a>
-        </div>
+  <div class="container">
+    <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
+
+    <!-- Clickable Title Link to Homepage -->
+    <a href="/index.html" class="title-link" title="Return to homepage">
+      <div class="title-line">UNFIXED//</div>
+      <div class="title-line">///DESIGN</div>
+    </a>
+
+    <h2 class="description">
+      This is an ongoing, feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can form overarching entities of value. In specific circumstances, it is not just <i>what</i> builders build, but <i>how</i> they build that should be seen as forms worthy of conservation. Follow us here as we move along.
+    </h2>
+
+    <p class="edge-text">////ONGOING/////////////////////////////////////////////////////////////////</p>
+
+    <!-- Updated Text Navigation Strip -->
+    <div class="text-nav">
+      <a href="/about-page.html" target="_self">ABOUT</a>
+      <span>////</span>
+      <a href="https://www.instagram.com/unfixeddesign/" target="_blank">SOCIAL</a>
+      <span>////</span>
+      <a href="/contact-page.html" target="_self">CONTACT</a>
     </div>
+  </div>
 </body>
 </html>
