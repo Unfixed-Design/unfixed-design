@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNFXD//DSGN - About Page</title>
+    <title>UNFXD//DSGN</title>
     <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
     <style>
         /* Base styling */
@@ -19,6 +19,17 @@
             box-sizing: border-box;
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* Video styling */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
 
         /* Container styling */
@@ -43,17 +54,32 @@
             text-align: center;
         }
 
-        /* Responsive styling for desktop and mobile */
+        /* Specific desktop title styling */
         @media (min-width: 601px) {
             .title-line {
                 font-size: calc(14vw + 30px);
             }
+            .title-line:first-of-type {
+                margin-top: -5px;
+            }
+            .title-line + .title-line {
+                margin-top: -28px;
+            }
+
+            /* Adjust button positioning for desktop */
+            .button-container {
+                margin-top: 15px;
+            }
         }
 
+        /* Specific mobile title styling */
         @media (max-width: 600px) {
             .title-line {
                 font-size: calc(22vw + 3px);
                 margin-top: -10px;
+            }
+            .title-line + .title-line {
+                margin-top: -5px;
             }
         }
 
@@ -65,20 +91,16 @@
             font-weight: 300;
             text-rendering: optimizeLegibility;
             max-width: 900px;
-            padding: 0 20px; /* Same padding as index.html for mobile */
-            margin-top: 9px; /* Consistent spacing as index.html */
+            padding: 0 20px;
+            margin-top: 9px;
+            hyphens: auto;
         }
 
-        /* Add extra padding between paragraphs */
-        .description + .description {
-            margin-top: 16px;
-        }
-
-        /* Edge-text Styling */
+        /* Styling for edge-text paragraphs */
         .edge-text {
             font-size: 1.8rem;
             text-align: center;
-            margin: 12px 0;
+            margin: 13px 0;
             padding: 5px 0;
             max-width: 900px;
             width: 100%;
@@ -92,33 +114,43 @@
             margin-bottom: -5px;
         }
 
-        /* Button Container */
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 0px; /* Adjusted to match spacing from edge-text */
-            margin-bottom: 40px; /* Added margin for consistent spacing from bottom */
+        /* Icon Button Styling */
+        .icon-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 0;
         }
 
-        /* Button Styling */
-        .button img {
-            width: 30px; /* Matches size used in index.html */
-            height: 30px; /* Matches size used in index.html */
-            filter: brightness(0) invert(1);
-            transition: transform 0.3s ease;
+        .icon-button:hover {
+            transform: scale(1.1);
         }
-        .button img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
+
+        /* Icon Styling */
+        .icon {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+            display: block;
+        }
+
+        /* Space between buttons */
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 0px;
+            margin-bottom: 40px;
         }
 
         /* Responsive description and edge-text styling for mobile */
         @media (max-width: 600px) {
             .description {
                 font-size: 19px;
-                padding: 0 20px; /* Add padding for better readability */
-                hyphens: auto;
-                overflow-wrap: break-word;
+                padding: 0 20px;
+                margin-top: 9px;
             }
             .edge-text {
                 font-size: 1.2rem;
@@ -127,45 +159,110 @@
                 white-space: normal;
                 overflow: hidden;
                 text-overflow: clip;
+                margin: 13px 0;
             }
             .edge-text:first-of-type {
                 margin-bottom: 13px;
             }
             .button-container {
-                margin-top: 5px; /* Adjust for mobile consistency */
-                margin-bottom: 30px; /* Adjust for mobile consistency */
+                margin-top: 5px;
+                margin-bottom: 30px;
+                gap: 10px;
             }
+/* Floating Button Base */
+.floating-submit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInFloat 1.1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+/* Fade-in animation */
+@keyframes fadeInFloat {
+    to {
+        opacity: 1;
+    }
+}
+
+.floating-submit:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Optional: mobile minimised button */
+@media (max-width: 600px) {
+    .floating-submit {
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        font-size: 1.5rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .floating-submit .label {
+        display: none;
+    }
+
+    .floating-submit:hover .label {
+        display: block;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        background: white;
+        color: black;
+        font-size: 0.9rem;
+        padding: 6px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+}
         }
     </style>
 </head>
 <body>
     <div class="container">
         <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
-        <div class="title-line">DETAILS//</div>
-        <h2 class="description">This project looks into the ways communities create and sustain architectural heritage that exists outside fixed habits, policies, and building methods. By focusing on slow-form placemaking –gradual, iterative approaches to building environments– our work aims to show how people cultivate and conserve meaningful spaces that challenge conventional views on architecture and conservation.</h2>
-        <h2 class="description">For these communities, especially those who are mobile, places are not static; they evolve with needs, seasonal cycles, and travel patterns. Mobile structures and temporary sites, though often overlooked, are central to such heritage. These spaces exemplify resilience and adaptability, embodying functional, unfixed architecture that holds deep connections between people, craft, and interconnected usages of space.</h2>
-        <h2 class="description">We aim to highlight the conservation needs of these dynamic cultural landscapes. Unlike permanent monuments, these atypical, functionalist forms resist rigid assessments, raising questions about how to conserve evolving, adaptable spaces. By examining atypical construction practices and spatial layouts, the project will consider –through ongoing feedback from these communities– new parameters for safeguarding such architectural heritage.</h2>
-        <h2 class="description">Ultimately, this work advocates for expanding the concept of conservation to include malleable, slow-form methods of placemaking, encouraging an inclusive understanding of architectural expression that respects the functionalist works of these communities.</h2>
-
-        <p class="edge-text">//////DETAILS//////////////////////////////////////////////////////////////////</p>
-        
-        <!-- Button Container with Updated Buttons -->
+        <div class="title-line">UNFIXED//</div>
+        <div class="title-line">///DESIGN</div>
+        <h2 class="description">This is an ongoing, feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can form overarching entities of value. In specific circumstances, it is not just <i>what</i> builders build, but <i>how</i> they build that should be seen as forms worthy of conservation. Follow us here as we move along.</h2>
+        <p class="edge-text">////ONGOING/////////////////////////////////////////////////////////////////</p>
+    
+        <!-- Button Container -->
         <div class="button-container">
-            <!-- Contact Button -->
             <a href="/contact-page.html" target="_self" title="Contact Page" class="icon-button">
                 <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/mail_icon.png" class="icon" alt="Contact Us">
             </a>
-            
-            <!-- Instagram Button -->
-            <a href="https://instagram.com/unfixeddesign/" target="_blank" class="button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" alt="Instagram">
+            <a href="https://www.instagram.com/unfixeddesign/" target="_blank" title="Instagram" class="icon-button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/instagram_icon.png" class="icon" alt="Instagram">
             </a>
-
-            <!-- Back Button -->
-            <a href="/" class="button">
-                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/back_icon.png" alt="Back">
+            <!-- New Page Button -->
+            <a href="/about-page.html" target="_self" title="About Page" class="icon-button">
+                <img src="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/about_icon.png" class="icon" alt="Another Page">
             </a>
         </div>
     </div>
+<!-- Floating Dropbox Submission Button (with animation + mobile-friendly) -->
+<a href="https://www.dropbox.com/request/https://www.dropbox.com/request/2yKCLUiAZdRrSU9c1rvR" 
+   class="floating-submit" target="_blank" title="Submit to UNFIXED archive">
+   <span class="label">✚ Submit</span>
+</a>
 </body>
 </html>
