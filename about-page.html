@@ -36,7 +36,6 @@
       color: inherit;
       cursor: pointer;
       display: inline-block;
-      transition: transform 0.2s ease;
     }
 
     .title-line {
@@ -46,15 +45,26 @@
       margin: 0;
       line-height: 1;
       text-align: center;
-      transition: transform 0.25s ease;
+      transition: transform 0.2s ease;
     }
 
     .title-link:hover .title-line:first-of-type {
       transform: translateX(-4px);
+      animation: glitch 0.3s linear 1;
     }
 
     .title-link:hover .title-line:last-of-type {
       transform: translateX(4px);
+      animation: glitch 0.3s linear 1;
+    }
+
+    @keyframes glitch {
+      0%   { transform: translateX(0);   opacity: 1; }
+      20%  { transform: translateX(-2px); opacity: 0.8; }
+      40%  { transform: translateX(2px);  opacity: 1; }
+      60%  { transform: translateX(-1px); opacity: 0.9; }
+      80%  { transform: translateX(1px);  opacity: 1; }
+      100% { transform: translateX(0);    opacity: 1; }
     }
 
     @media (min-width: 601px) {
@@ -184,15 +194,17 @@
   <div class="container">
     <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
 
-    <!-- Clickable Title Link with offset hover -->
+    <!-- Clickable Title Link with offset + glitch effect -->
     <a href="/index.html" class="title-link" title="Return to homepage">
       <div class="title-line">UNFIXED//</div>
       <div class="title-line">///DESIGN</div>
     </a>
 
-    <h2 class="description">
-      This is an ongoing, feedback-driven project focused on overlooked architectural expression. Currently based in Glasgow, the aim is to display how cultural practices, slow-form spatial use and atypical building can form overarching entities of value. In specific circumstances, it is not just <i>what</i> builders build, but <i>how</i> they build that should be seen as forms worthy of conservation. Follow us here as we move along.
-    </h2>
+   <h2 class="description">
+This project is concerned with the material inheritances and spatial negotiations that animate Glasgow. By attending to self-built adaptations—such as those of the city’s Showpeople community—and to the lingering logics of industrial infrastructures, the work traces a lived urbanism that persists alongside, and often in spite of, official plans.
+The material on this site, along with our public-facing events, invites addition, refusal, and re-reading. Rather than settle or conclude, we suggest that Glasgow’s spaces remain in motion: unsettled, provisional, and continually shaped through entanglement.
+You're welcome to contribute in whatever form feels right—text, audio, video, or links to your work. Submissions can be anonymous or named. We’ll be in touch.
+  </h2>
 
     <!-- Dropbox Submission Button -->
     <a href="https://www.dropbox.com/request/2yKCLUiAZdRrSU9c1rvR"  
