@@ -50,24 +50,48 @@ body {
 
 /* Glitch animation */
 @keyframes glitch {
-  0% { text-shadow: 1px 0 rgba(255, 0, 0, 0.4), -1px 0 rgba(0, 255, 255, 0.4); }
-  20% { text-shadow: -1px 0 rgba(255, 0, 0, 0.4), 1px 0 rgba(0, 255, 255, 0.4); }
-  40% { text-shadow: 1px 1px rgba(255, 0, 0, 0.4), -1px -1px rgba(0, 255, 255, 0.4); }
-  60% { text-shadow: -1px -1px rgba(255, 0, 0, 0.4), 1px 1px rgba(0, 255, 255, 0.4); }
-  80% { text-shadow: 1px -1px rgba(255, 0, 0, 0.4), -1px 1px rgba(0, 255, 255, 0.4); }
-  100% { text-shadow: 1px 0 rgba(255, 0, 0, 0.4), -1px 0 rgba(0, 255, 255, 0.4); }
+  0% {
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+  20% {
+    text-shadow: -2px 0 red, 2px 0 cyan;
+  }
+  40% {
+    text-shadow: 2px 2px red, -2px -2px cyan;
+  }
+  60% {
+    text-shadow: -2px -2px red, 2px 2px cyan;
+  }
+  80% {
+    text-shadow: 2px -2px red, -2px 2px cyan;
+  }
+  100% {
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
 }
 
 .title-link:hover .title-line {
-  animation: glitch 0.8s infinite;
+  animation: glitch 0.5s infinite;
+}
+
+.title-link:hover .title-line:first-of-type {
+  transform: translateX(-4px);
+}
+
+.title-link:hover .title-line:last-of-type {
+  transform: translateX(4px);
 }
 
 @media (min-width: 601px) {
   .title-line {
     font-size: calc(14vw + 30px);
   }
-  .title-line:first-of-type { margin-top: -5px; }
-  .title-line + .title-line { margin-top: -28px; }
+  .title-line:first-of-type {
+    margin-top: -5px;
+  }
+  .title-line + .title-line {
+    margin-top: -28px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -75,7 +99,9 @@ body {
     font-size: calc(22vw + 3px);
     margin-top: -10px;
   }
-  .title-line + .title-line { margin-top: -5px; }
+  .title-line + .title-line {
+    margin-top: -5px;
+  }
 }
 
 .description {
@@ -90,7 +116,9 @@ body {
   hyphens: auto;
 }
 
-.paragraph { margin-bottom: 20px; }
+.paragraph {
+  margin-bottom: 20px;
+}
 
 .edge-text {
   font-size: 1.8rem;
@@ -104,7 +132,28 @@ body {
   text-overflow: ellipsis;
 }
 
-.edge-text:first-of-type { margin-bottom: -5px; }
+.edge-text:first-of-type {
+  margin-bottom: -5px;
+}
+
+.dropbox-submit {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 22px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.dropbox-submit:hover {
+  background-color: white;
+  color: black;
+}
 
 .text-nav {
   display: flex;
@@ -125,34 +174,71 @@ body {
   transition: color 0.3s ease;
 }
 
-.text-nav a:hover { color: #ccc; }
+.text-nav a:hover {
+  color: #ccc;
+}
 
-.text-nav span { color: white; opacity: 0.6; }
+.text-nav span {
+  color: white;
+  opacity: 0.6;
+}
 
 @media (max-width: 600px) {
-  .description { font-size: 19px; padding: 0 20px; margin-top: 9px; }
-  .paragraph { margin-bottom: 18px; }
-  .edge-text { font-size: 1.2rem; max-width: 90vw; padding: 0 11px; white-space: normal; overflow: hidden; text-overflow: clip; margin: 13px 0; }
-  .edge-text:first-of-type { margin-bottom: 13px; }
-  .text-nav { font-size: 1rem; flex-wrap: wrap; text-align: center; }
+  .description {
+    font-size: 19px;
+    padding: 0 20px;
+    margin-top: 9px;
+  }
+  .paragraph {
+    margin-bottom: 18px;
+  }
+  .edge-text {
+    font-size: 1.2rem;
+    max-width: 90vw;
+    padding: 0 11px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+    margin: 13px 0;
+  }
+  .edge-text:first-of-type {
+    margin-bottom: 13px;
+  }
+  .text-nav {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 </style>
 </head>
 <body>
 <div class="container">
   <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
+
   <!-- Clickable Title Link to Homepage -->
   <a href="/index.html" class="title-link" title="Return to homepage">
-    <h1 class="title-line">UNFIXED//</h1>
-    <h1 class="title-line">///DESIGN</h1>
+    <div class="title-line">UNFIXED//</div>
+    <div class="title-line">///DESIGN</div>
   </a>
-  <!-- Main Text -->
+
+  <!-- Contact Page Description Text -->
   <div class="description">
-    <p class="paragraph">/////// This project examines how built form emerges from constraint and movement—tracing a citywide system of self-built spaces formed by Glasgow’s Showpeople.</p>
-    <p class="paragraph">Working in collaboration with members of this travelling fairground community, the research attends to domestic yards where families historically settle between fairs: sites that hold deep social continuity and spatial intelligence, even as they remain marginal to planning systems.</p>
-    <p class="paragraph">The work follows the sociomaterial life of these yards—not as static enclosures, but as infrastructures of dwelling, often nested within the remains of industrial infrastructure.</p>
-    <p class="paragraph">Rather than treating heritage as a fixed category, the project asks how value is carried through logistics, care, and daily adaptation. It considers what kinds of design knowledge persist on the margins, and how these embedded practices might inform more responsive approaches to urban planning and architectural conservation. ///////</p>
+    <p class="paragraph">
+/////// This project examines how built form emerges from constraint and movement—tracing a citywide system of self-built spaces formed //// most notably //// by Glasgow’s Showpeople. Working in collaboration with members of this travelling fairground community, the research attends to the domestic yards where families have historically settled between fairs: sites that hold deep social continuity and spatial intelligence, even as they remain marginal to planning systems.
+    </p>
+    <p class="paragraph">
+The work follows the sociomaterial life of these yards—not as static enclosures, but as infrastructures of dwelling, often nested within the remains of industrial infrastructure. Railways, landfills, disused factories, and undermining are not simply inherited conditions, but active components in the making of place.
+    </p>
+    <p class="paragraph">
+In dialogue with a range of mobilities research and architectural forums, the project documents how adaptive constructions engage with regulation, redevelopment, and long-standing attachments to sites. Their placemaking reveals forms of order that resist simple classification. They can take shape through canted chalets, shared groundworks, seasonal improvisations—spatial strategies guided more by kinship, proximity, and use than by external design. These patterns are not readily visible from above, but emerge through situated observation and sustained involvement. They are also rich with intelligence that could add to collective, slow-form redevelopment.
+    </p>
+    <p class="paragraph">
+Rather than treating heritage as a fixed category, the project asks how value is carried through logistics, care, and daily adaptation. It considers what kinds of design knowledge persist on the margins, and how these embedded practices might inform more responsive approaches to urban planning and architectural conservation. ///////
+    </p>
   </div>
+
+  <!-- Text Navigation Strip -->
   <div class="text-nav">
     <a href="/about-page.html" target="_self">ABOUT</a>
     <span>////</span>
