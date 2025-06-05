@@ -1,225 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UNFXD//DSGN</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: black;
-      color: white;
-      font-family: Avenir, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      overflow-x: hidden;
-      position: relative;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNFXD//DSGN</title>
+<link rel="icon" href="https://raw.githubusercontent.com/unfixed-design/unfixed-design/main/images/favicon.png" type="image/x-icon">
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: Avenir, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  position: relative;
+}
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 900px;
-      width: 100%;
-      padding: 0;
-      position: relative;
-      z-index: 1;
-    }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
 
-    .title-link {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      display: inline-block;
-    }
+.title-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+}
 
-    .title-line {
-      font-family: Impact, Arial Black, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 1;
-      text-align: center;
-      transition: transform 0.25s ease;
-    }
+.title-line {
+  font-family: Impact, Arial Black, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
 
-    .title-link:hover .title-line:first-of-type {
-      transform: translateX(-4px);
-    }
+/* Glitch animation */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+  20% {
+    text-shadow: -2px 0 red, 2px 0 cyan;
+  }
+  40% {
+    text-shadow: 2px 2px red, -2px -2px cyan;
+  }
+  60% {
+    text-shadow: -2px -2px red, 2px 2px cyan;
+  }
+  80% {
+    text-shadow: 2px -2px red, -2px 2px cyan;
+  }
+  100% {
+    text-shadow: 2px 0 red, -2px 0 cyan;
+  }
+}
 
-    .title-link:hover .title-line:last-of-type {
-      transform: translateX(4px);
-    }
+.title-link:hover .title-line {
+  animation: glitch 0.5s infinite;
+}
 
-    @media (min-width: 601px) {
-      .title-line {
-        font-size: calc(14vw + 30px);
-      }
-      .title-line:first-of-type {
-        margin-top: -5px;
-      }
-      .title-line + .title-line {
-        margin-top: -28px;
-      }
-    }
+.title-link:hover .title-line:first-of-type {
+  transform: translateX(-4px);
+}
 
-    @media (max-width: 600px) {
-      .title-line {
-        font-size: calc(22vw + 3px);
-        margin-top: -10px;
-      }
-      .title-line + .title-line {
-        margin-top: -5px;
-      }
-    }
+.title-link:hover .title-line:last-of-type {
+  transform: translateX(4px);
+}
 
-    .description {
-      font-size: 21px;
-      text-align: justify;
-      margin: 0;
-      font-weight: 300;
-      text-rendering: optimizeLegibility;
-      max-width: 900px;
-      padding: 0 20px;
-      margin-top: 9px;
-      hyphens: auto;
-    }
+@media (min-width: 601px) {
+  .title-line {
+    font-size: calc(14vw + 30px);
+  }
+  .title-line:first-of-type {
+    margin-top: -5px;
+  }
+  .title-line + .title-line {
+    margin-top: -28px;
+  }
+}
 
-    .paragraph {
-      margin-bottom: 20px;
-    }
+@media (max-width: 600px) {
+  .title-line {
+    font-size: calc(22vw + 3px);
+    margin-top: -10px;
+  }
+  .title-line + .title-line {
+    margin-top: -5px;
+  }
+}
 
-    .edge-text {
-      font-size: 1.8rem;
-      text-align: center;
-      margin: 13px 0;
-      padding: 5px 0;
-      max-width: 900px;
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+.description {
+  font-size: 21px;
+  text-align: justify;
+  margin: 0;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  max-width: 900px;
+  padding: 0 20px;
+  margin-top: 9px;
+  hyphens: auto;
+}
 
-    .edge-text:first-of-type {
-      margin-bottom: -5px;
-    }
+.paragraph {
+  margin-bottom: 20px;
+}
 
-    .dropbox-submit {
-      margin-top: 30px;
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      border: 2px solid white;
-      color: white;
-      padding: 12px 22px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
+.edge-text {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 13px 0;
+  padding: 5px 0;
+  max-width: 900px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    .dropbox-submit:hover {
-      background-color: white;
-      color: black;
-    }
+.edge-text:first-of-type {
+  margin-bottom: -5px;
+}
 
-    .text-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 40px;
-      font-family: Avenir, Arial, sans-serif;
-      font-size: 1.1rem;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
+.dropbox-submit {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 22px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
 
-    .text-nav a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+.dropbox-submit:hover {
+  background-color: white;
+  color: black;
+}
 
-    .text-nav a:hover {
-      color: #ccc;
-    }
+.text-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  font-family: Avenir, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 
-    .text-nav span {
-      color: white;
-      opacity: 0.6;
-    }
+.text-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-    @media (max-width: 600px) {
-      .description {
-        font-size: 19px;
-        padding: 0 20px;
-        margin-top: 9px;
-      }
-      .paragraph {
-        margin-bottom: 18px;
-      }
-      .edge-text {
-        font-size: 1.2rem;
-        max-width: 90vw;
-        padding: 0 11px;
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: clip;
-        margin: 13px 0;
-      }
-      .edge-text:first-of-type {
-        margin-bottom: 13px;
-      }
-      .text-nav {
-        font-size: 1rem;
-        flex-wrap: wrap;
-        text-align: center;
-      }
-    }
-  </style>
+.text-nav a:hover {
+  color: #ccc;
+}
+
+.text-nav span {
+  color: white;
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .description {
+    font-size: 19px;
+    padding: 0 20px;
+    margin-top: 9px;
+  }
+  .paragraph {
+    margin-bottom: 18px;
+  }
+  .edge-text {
+    font-size: 1.2rem;
+    max-width: 90vw;
+    padding: 0 11px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+    margin: 13px 0;
+  }
+  .edge-text:first-of-type {
+    margin-bottom: 13px;
+  }
+  .text-nav {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
+<div class="container">
+  <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
 
-    <!-- Clickable Title Link to Homepage -->
-    <a href="/index.html" class="title-link" title="Return to homepage">
-      <div class="title-line">UNFIXED//</div>
-      <div class="title-line">///DESIGN</div>
-    </a>
+  <!-- Clickable Title Link to Homepage -->
+  <a href="/index.html" class="title-link" title="Return to homepage">
+    <div class="title-line">UNFIXED//</div>
+    <div class="title-line">///DESIGN</div>
+  </a>
 
-    <!-- Contact Page Description Text -->
-   <div class="description">
-  <p class="paragraph">
+  <!-- Contact Page Description Text -->
+  <div class="description">
+    <p class="paragraph">
 /////// This project examines how built form emerges from constraint and movement—tracing a citywide system of self-built spaces formed //// most notably //// by Glasgow’s Showpeople. Working in collaboration with members of this travelling fairground community, the research attends to the domestic yards where families have historically settled between fairs: sites that hold deep social continuity and spatial intelligence, even as they remain marginal to planning systems.
-  </p>
-  <p class="paragraph">
+    </p>
+    <p class="paragraph">
 The work follows the sociomaterial life of these yards—not as static enclosures, but as infrastructures of dwelling, often nested within the remains of industrial infrastructure. Railways, landfills, disused factories, and undermining are not simply inherited conditions, but active components in the making of place.
-  </p>
-  <p class="paragraph">
-In dialogue with mobilities research and architectural forums, the project documents how adaptive constructions engage with regulation, redevelopment, and long-standing attachments to sites Their placemaking reveals forms of order that resist simple classification. They can take shape through canted chalets, shared groundworks, seasonal improvisations—spatial strategies guided more by kinship, proximity, and use than by external design. These patterns are not readily visible from above, but emerge through situated observation and sustained involvement. They are also rich with intelligence that could add to collective, slow-form redevelopment.
-  </p>
-  <p class="paragraph">
+    </p>
+    <p class="paragraph">
+In dialogue with a range of mobilities research and architectural forums, the project documents how adaptive constructions engage with regulation, redevelopment, and long-standing attachments to sites. Their placemaking reveals forms of order that resist simple classification. They can take shape through canted chalets, shared groundworks, seasonal improvisations—spatial strategies guided more by kinship, proximity, and use than by external design. These patterns are not readily visible from above, but emerge through situated observation and sustained involvement. They are also rich with intelligence that could add to collective, slow-form redevelopment.
+    </p>
+    <p class="paragraph">
 Rather than treating heritage as a fixed category, the project asks how value is carried through logistics, care, and daily adaptation. It considers what kinds of design knowledge persist on the margins, and how these embedded practices might inform more responsive approaches to urban planning and architectural conservation. ///////
-  </p>
-</div>
-
-    <!-- Text Navigation Strip -->
-    <div class="text-nav">
-      <a href="/about-page.html" target="_self">ABOUT</a>
-      <span>////</span>
-      <a href="https://www.instagram.com/unfixeddesign/" target="_blank">SOCIAL</a>
-      <span>////</span>
-      <a href="/contact-page.html" target="_self">CONTACT</a>
-    </div>
+    </p>
   </div>
+
+  <!-- Text Navigation Strip -->
+  <div class="text-nav">
+    <a href="/about-page.html" target="_self">ABOUT</a>
+    <span>////</span>
+    <a href="https://www.instagram.com/unfixeddesign/" target="_blank">SOCIAL</a>
+    <span>////</span>
+    <a href="/contact-page.html" target="_self">CONTACT</a>
+  </div>
+</div>
 </body>
 </html>
