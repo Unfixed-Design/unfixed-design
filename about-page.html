@@ -39,7 +39,6 @@ body {
 }
 
 .title-line {
-  display: block;
   font-family: Impact, Arial Black, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -49,13 +48,14 @@ body {
   transition: transform 0.25s ease;
 }
 
+/* Glitch animation */
 @keyframes glitch {
-  0% { text-shadow: 1.5px 0 rgba(255, 0, 0, 0.4), -1.5px 0 rgba(0, 255, 255, 0.4); }
-  20% { text-shadow: -1.5px 0 rgba(255, 0, 0, 0.4), 1.5px 0 rgba(0, 255, 255, 0.4); }
-  40% { text-shadow: 1.5px 1.5px rgba(255, 0, 0, 0.4), -1.5px -1.5px rgba(0, 255, 255, 0.4); }
-  60% { text-shadow: -1.5px -1.5px rgba(255, 0, 0, 0.4), 1.5px 1.5px rgba(0, 255, 255, 0.4); }
-  80% { text-shadow: 1.5px -1.5px rgba(255, 0, 0, 0.4), -1.5px 1.5px rgba(0, 255, 255, 0.4); }
-  100% { text-shadow: 1.5px 0 rgba(255, 0, 0, 0.4), -1.5px 0 rgba(0, 255, 255, 0.4); }
+  0% { text-shadow: 1px 0 rgba(255, 0, 0, 0.4), -1px 0 rgba(0, 255, 255, 0.4); }
+  20% { text-shadow: -1px 0 rgba(255, 0, 0, 0.4), 1px 0 rgba(0, 255, 255, 0.4); }
+  40% { text-shadow: 1px 1px rgba(255, 0, 0, 0.4), -1px -1px rgba(0, 255, 255, 0.4); }
+  60% { text-shadow: -1px -1px rgba(255, 0, 0, 0.4), 1px 1px rgba(0, 255, 255, 0.4); }
+  80% { text-shadow: 1px -1px rgba(255, 0, 0, 0.4), -1px 1px rgba(0, 255, 255, 0.4); }
+  100% { text-shadow: 1px 0 rgba(255, 0, 0, 0.4), -1px 0 rgba(0, 255, 255, 0.4); }
 }
 
 .title-link:hover .title-line {
@@ -143,8 +143,8 @@ body {
   <p class="edge-text">///////////////////////////////////////////////////////UNFXD//DSGN//////////</p>
   <!-- Clickable Title Link to Homepage -->
   <a href="/index.html" class="title-link" title="Return to homepage">
-    <span class="title-line">UNFIXED//</span>
-    <span class="title-line">///DESIGN</span>
+    <h1 class="title-line">UNFIXED//</h1>
+    <h1 class="title-line">///DESIGN</h1>
   </a>
   <!-- Main Text -->
   <div class="description">
