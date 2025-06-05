@@ -51,35 +51,27 @@ body {
 /* Glitch animation */
 @keyframes glitch {
   0% {
-    text-shadow: 2px 0 red, -2px 0 cyan;
+    text-shadow: 1px 0 rgba(255, 0, 0, 0.4), -1px 0 rgba(0, 255, 255, 0.4);
   }
   20% {
-    text-shadow: -2px 0 red, 2px 0 cyan;
+    text-shadow: -1px 0 rgba(255, 0, 0, 0.4), 1px 0 rgba(0, 255, 255, 0.4);
   }
   40% {
-    text-shadow: 2px 2px red, -2px -2px cyan;
+    text-shadow: 1px 1px rgba(255, 0, 0, 0.4), -1px -1px rgba(0, 255, 255, 0.4);
   }
   60% {
-    text-shadow: -2px -2px red, 2px 2px cyan;
+    text-shadow: -1px -1px rgba(255, 0, 0, 0.4), 1px 1px rgba(0, 255, 255, 0.4);
   }
   80% {
-    text-shadow: 2px -2px red, -2px 2px cyan;
+    text-shadow: 1px -1px rgba(255, 0, 0, 0.4), -1px 1px rgba(0, 255, 255, 0.4);
   }
   100% {
-    text-shadow: 2px 0 red, -2px 0 cyan;
+    text-shadow: 1px 0 rgba(255, 0, 0, 0.4), -1px 0 rgba(0, 255, 255, 0.4);
   }
 }
 
 .title-link:hover .title-line {
-  animation: glitch 0.5s infinite;
-}
-
-.title-link:hover .title-line:first-of-type {
-  transform: translateX(-4px);
-}
-
-.title-link:hover .title-line:last-of-type {
-  transform: translateX(4px);
+  animation: glitch 0.8s infinite;
 }
 
 @media (min-width: 601px) {
