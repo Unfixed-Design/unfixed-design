@@ -45,41 +45,20 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
-  transition: transform 0.25s ease;
-}
-
-/* Glitch animation */
-@keyframes glitch {
-  0% { text-shadow: 2px 0 rgba(255, 0, 0, 0.5), -2px 0 rgba(0, 255, 255, 0.5); }
-  20% { text-shadow: -2px 0 rgba(255, 0, 0, 0.5), 2px 0 rgba(0, 255, 255, 0.5); }
-  40% { text-shadow: 2px 2px rgba(255, 0, 0, 0.5), -2px -2px rgba(0, 255, 255, 0.5); }
-  60% { text-shadow: -2px -2px rgba(255, 0, 0, 0.5), 2px 2px rgba(0, 255, 255, 0.5); }
-  80% { text-shadow: 2px -2px rgba(255, 0, 0, 0.5), -2px 2px rgba(0, 255, 255, 0.5); }
-  100% { text-shadow: 2px 0 rgba(255, 0, 0, 0.5), -2px 0 rgba(0, 255, 255, 0.5); }
+  transition: transform 0.25s ease, filter 0.2s ease;
 }
 
 .title-link:hover .title-line {
-  animation: glitch 0.5s infinite;
-}
-
-.title-link:hover .title-line:first-of-type {
-  transform: translateX(-4px);
-}
-
-.title-link:hover .title-line:last-of-type {
-  transform: translateX(4px);
+  filter: blur(1px) contrast(0.8);
+  transform: scale(1.02);
 }
 
 @media (min-width: 601px) {
   .title-line {
     font-size: calc(14vw + 30px);
   }
-  .title-line:first-of-type {
-    margin-top: -5px;
-  }
-  .title-line + .title-line {
-    margin-top: -28px;
-  }
+  .title-line:first-of-type { margin-top: -5px; }
+  .title-line + .title-line { margin-top: -28px; }
 }
 
 @media (max-width: 600px) {
@@ -87,9 +66,7 @@ body {
     font-size: calc(22vw + 3px);
     margin-top: -10px;
   }
-  .title-line + .title-line {
-    margin-top: -5px;
-  }
+  .title-line + .title-line { margin-top: -5px; }
 }
 
 .description {
@@ -104,9 +81,7 @@ body {
   hyphens: auto;
 }
 
-.paragraph {
-  margin-bottom: 20px;
-}
+.paragraph { margin-bottom: 20px; }
 
 .edge-text {
   font-size: 1.8rem;
@@ -120,28 +95,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.edge-text:first-of-type {
-  margin-bottom: -5px;
-}
-
-.dropbox-submit {
-  margin-top: 30px;
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: 2px solid white;
-  color: white;
-  padding: 12px 22px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.dropbox-submit:hover {
-  background-color: white;
-  color: black;
-}
+.edge-text:first-of-type { margin-bottom: -5px; }
 
 .text-nav {
   display: flex;
@@ -162,41 +116,16 @@ body {
   transition: color 0.3s ease;
 }
 
-.text-nav a:hover {
-  color: #ccc;
-}
+.text-nav a:hover { color: #ccc; }
 
-.text-nav span {
-  color: white;
-  opacity: 0.6;
-}
+.text-nav span { color: white; opacity: 0.6; }
 
 @media (max-width: 600px) {
-  .description {
-    font-size: 19px;
-    padding: 0 20px;
-    margin-top: 9px;
-  }
-  .paragraph {
-    margin-bottom: 18px;
-  }
-  .edge-text {
-    font-size: 1.2rem;
-    max-width: 90vw;
-    padding: 0 11px;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: clip;
-    margin: 13px 0;
-  }
-  .edge-text:first-of-type {
-    margin-bottom: 13px;
-  }
-  .text-nav {
-    font-size: 1rem;
-    flex-wrap: wrap;
-    text-align: center;
-  }
+  .description { font-size: 19px; padding: 0 20px; margin-top: 9px; }
+  .paragraph { margin-bottom: 18px; }
+  .edge-text { font-size: 1.2rem; max-width: 90vw; padding: 0 11px; white-space: normal; overflow: hidden; text-overflow: clip; margin: 13px 0; }
+  .edge-text:first-of-type { margin-bottom: 13px; }
+  .text-nav { font-size: 1rem; flex-wrap: wrap; text-align: center; }
 }
 </style>
 </head>
