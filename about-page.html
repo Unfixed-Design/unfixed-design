@@ -45,11 +45,15 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
-  transition: transform 0.25s ease, filter 0.2s ease;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
 }
 
 .title-link:hover .title-line {
-  filter: blur(1px) contrast(0.8);
+  text-shadow:
+    2px 0 red,
+    -2px 0 cyan,
+    1px 1px lime,
+    -1px -1px magenta;
   transform: scale(1.02);
 }
 
@@ -81,7 +85,9 @@ body {
   hyphens: auto;
 }
 
-.paragraph { margin-bottom: 20px; }
+.paragraph {
+  margin-bottom: 20px;
+}
 
 .edge-text {
   font-size: 1.8rem;
@@ -95,7 +101,28 @@ body {
   text-overflow: ellipsis;
 }
 
-.edge-text:first-of-type { margin-bottom: -5px; }
+.edge-text:first-of-type {
+  margin-bottom: -5px;
+}
+
+.dropbox-submit {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 22px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.dropbox-submit:hover {
+  background-color: white;
+  color: black;
+}
 
 .text-nav {
   display: flex;
