@@ -45,7 +45,16 @@ body {
   margin: 0;
   line-height: 1;
   text-align: center;
-  transition: transform 0.25s ease, text-shadow 0.25s ease;
+  transition: text-shadow 0.2s ease;
+}
+
+@keyframes glitchy-move {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0, 0); }
 }
 
 .title-link:hover .title-line {
@@ -54,7 +63,7 @@ body {
     -2px 0 cyan,
     1px 1px lime,
     -1px -1px magenta;
-  transform: scale(1.02);
+  animation: glitchy-move 0.3s infinite;
 }
 
 @media (min-width: 601px) {
@@ -101,9 +110,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.edge-text:first-of-type {
-  margin-bottom: -5px;
-}
+.edge-text:first-of-type { margin-bottom: -5px; }
 
 .dropbox-submit {
   margin-top: 30px;
